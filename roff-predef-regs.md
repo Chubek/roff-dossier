@@ -1,0 +1,85 @@
+- **$$**: Built-in Registers. Provides the process ID of the troff process.
+- **%**: Page Layout & Control. Controls page number adjustment or manipulation.
+- **.$**: Parameters. Contains the number of arguments passed to a macro.
+- **.A**: Built-in Registers. Stores the aspect ratio of the current device.
+- **.a**: Manipulating Spacing. Adjusts space after a block element.
+- **.b**: Artificial Fonts. Adjusts the baseline for fonts.
+- **.br**: Control Characters. Indicates the use of a break control character.
+- **.c**: Built-in Registers. Counts the number of copies to be printed.
+- **.C**: Compatibility Mode. Indicates if compatibility mode is active.
+- **.cdp**: Environments. Current depth position in the current environment.
+- **.ce**: Manipulating Filling and Adjustment. Counts the lines affected by centering.
+- **.cht**: Environments. Height of the tallest character in the current environment.
+- **.color**: Colors. Current color index.
+- **.cp**: Compatibility Mode. Compatibility page control.
+- **.csk**: Environments. Current sink; vertical distance moved down from the top.
+- **.d**: Diversions. Depth of the last diversion.
+- **.ev**: Environments. Current environment index.
+- **.F**: Built-in Registers. Current font family name.
+- **.f**: Font Positions. Current font position.
+- **.fam**: Font Families. Current font family.
+- **.fn**: Selecting Fonts. Current font name.
+- **.fp**: Font Positions. Current font position used.
+- **.g**: Built-in Registers. Indicates if color or grayscale is used.
+- **.H**: Motion Quanta. Current horizontal motion quantum (the smallest unit of measure horizontally).
+- **.h**: Diversions. Horizontal offset of the last diversion.
+- **.height**: Artificial Fonts. Height of the current font.
+- **.hla**: Manipulating Hyphenation. Current hyphenation language.
+- **.hlc**: Manipulating Hyphenation. Current hyphenation character.
+- **.hlm**: Manipulating Hyphenation. Current hyphenation margin.
+- **.hy**: Manipulating Hyphenation. Indicates if hyphenation is on or off.
+- **.hym**: Manipulating Hyphenation. Minimum margin for hyphenation.
+- **.hys**: Manipulating Hyphenation. Hyphenation strength (controls aggressiveness).
+- **.i**: Line Layout. Current indentation level.
+- **.in**: Line Layout. Current indentation.
+- **.int**: Line Continuation. Indicator for internal mode usage.
+- **.j**: Manipulating Filling and Adjustment. Justification status.
+- **.k**: Page Motions. Marks vertical location.
+- **.kern**: Ligatures and Kerning. Current kerning state.
+- **.L**: Manipulating Spacing. Left margin setting.
+- **.l**: Line Layout. Current line length.
+- **.lg**: Ligatures and Kerning. Current ligature usage setting.
+- **.linetabs**: Tabs and Fields. Current line tab setting.
+- **.ll**: Line Layout. Current line length.
+- **.lt**: Page Layout. Current length of titles.
+- **.m**: Colors. Current color.
+- **.M**: Colors. Current background color.
+- **.n**: Environments. Current nested environment depth.
+- **.ne**: Page Location Traps. Space needed for the next element.
+- **.nm**: Miscellaneous. Current numbering mode.
+- **.nn**: Miscellaneous. Current no-numbering setting.
+- **.ns**: Manipulating Spacing. Current no-space mode.
+- **.o**: Line Layout. Current offset.
+- **.O**: Suppressing Output. Current output suppression setting.
+- **.P**: Built-in Registers. Current page number.
+- **.p**: Page Layout. Current page length.
+- **.pe**: Page Location Traps. Current page-end trap setting.
+- **.pn**: Page Layout. Current physical page number.
+- **.ps**: Using Fractional Type Sizes. Current point size.
+- **.psr**: Using Fractional Type Sizes. Current relative point size.
+- **.pvs**: Changing the Vertical Spacing. Current provisional vertical spacing.
+- **.R**: Built-in Registers. Indicates if a warning should be registered.
+- **.rj**: Manipulating Filling and Adjustment. Current right-justify setting.
+- **.s**: Changing the Type Size. Current point size.
+- **.slant**: Artificial Fonts. Current font slant setting.
+- **.sr**: Using Fractional Type Sizes. Current relative type size.
+- **.ss**: Manipulating Filling and Adjustment. Current space size between words.
+- **.sss**: Manipulating Filling and Adjustment. Super space size setting.
+- **.sty**: Font Families. Current style for font family.
+- **.T**: Built-in Registers. Current device type.
+- **.t**: Page Location Traps. Current trap placement.
+- **.tabs**: Tabs and Fields. Current tab settings.
+- **.trunc**: Page Location Traps. Current truncation setting for traps.
+- **.U**: Built-in Registers. Update indicator for registers.
+- **.u**: Manipulating Filling and Adjustment. Current underline position.
+- **.V**: Motion Quanta. Current vertical motion quantum.
+- **.v**: Changing the Vertical Spacing. Current vertical spacing.
+- **.vpt**: Vertical Position Traps. Current vertical position trap setting.
+- **.w**: Environments. Current width in the environment.
+- **.warn**: Debugging. Current warning level.
+- **.x**: Built-in Registers. Extension register.
+- **.y**: Built-in Registers. Generic register y.
+- **.Y**: Built-in Registers. Generic register Y.
+- **.z**: Diversions. Depth of the last zero-width diversion.
+- **.zoom**: Selecting Fonts. Current zoom level for fonts.
+
