@@ -1,0 +1,1545 @@
+<ol type="1">
+<li><p><strong>Backslash (<code>\\</code>)</strong>: Prints a backslash in the text.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">.P</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>This is a backslash: <span class="ch">\\</span></span></code></pre></div></li>
+<li><p><strong>Newline (<code>\\</code>)</strong>: Inserts a line break, equivalent to <code>.br</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">.P</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>First line<span class="ch">\\</span>Second line</span></code></pre></div></li>
+<li><p><strong>Ignore Line (<code>\\!</code>)</strong>: Ignores the rest of the input line.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">.P</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>This will be printed!<span class="ch">\\</span>! This won&#39;t be printed</span></code></pre></div></li>
+<li><p><strong>Comment (<code>\\"</code>)</strong>: Begins a comment until the end of the line.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="fu">.P</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>This is visible.<span class="ch">\\</span><span class="st">&quot; This is a comment and will not be visible</span></span></code></pre></div></li>
+<li><p><strong>Inline Comment (<code>\\#</code>)</strong>: Comment character within a line, similar to <code>\\"</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="fu">.P</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>Visible text <span class="ch">\\</span># Comment text</span></code></pre></div></li>
+<li><p><strong>Macro Arguments (<code>\\$</code>)</strong>: References nth argument passed to a macro.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> example</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>Argument 1 is <span class="ch">\\</span>$1 and argument 2 is <span class="ch">\\</span>$2</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="fu">.example</span><span class="st"> &quot;first&quot; &quot;second&quot;</span></span></code></pre></div></li>
+<li><p><strong>All Arguments (<code>\\$*</code>)</strong>: References all arguments as a single string.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> example</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>All arguments: <span class="ch">\\</span>$*</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="fu">.example</span><span class="st"> one two three</span></span></code></pre></div></li>
+<li><p><strong>Macro Name (<code>\\$0</code>)</strong>: References the macro’s name itself.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> example</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>This macro is called <span class="ch">\\</span>$0</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="fu">.example</span></span></code></pre></div></li>
+<li><p><strong>All Arguments Individually (<code>\\$@</code>)</strong>: References all arguments individually.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> example</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>Arguments individually: <span class="ch">\\</span>$@</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="fu">.example</span><span class="st"> &quot;arg1&quot; &quot;arg2&quot;</span></span></code></pre></div></li>
+<li><p><strong>Quoted Arguments (<code>\\$^</code>)</strong>: References all arguments, each quoted individually. <code>roff     .de example     Quoted arguments: \\$^     ..     .example arg1 arg2</code></p></li>
+<li><p><strong>Reserved (<code>\\%</code>)</strong>: Placeholder, reserved for future use (not typically used). <code>roff     .P     Reserved: \\%</code></p></li>
+<li><p><strong>Zero-width Space (<code>\\&amp;</code>)</strong>: Inserts a zero-width space. <code>roff     .P     Zero\\&amp;width\\&amp;space</code></p></li>
+<li><p><strong>Zero-width Line Break (<code>\\'</code>)</strong>: Inserts a zero-width line break. <code>roff     .P     Zero\\'width\\'break</code></p></li>
+<li><p><strong>Special Character Digraph (<code>\\(xx</code>)</strong>: Inserts a special character using its digraph. <code>roff     .P     Special character: \\(co (copyright)</code></p></li>
+<li><p><strong>End Macro Argument Group (<code>\\)</code>)</strong>: Ends a macro argument group. <code>roff     .P     Grouped text\\) End of group</code></p></li>
+<li><p><strong>Interpolate String (<code>\\*</code>)</strong>: Interpolates a predefined string. <code>roff     .ds str Hello, World!     .P     The string is: \\*str</code></p></li>
+<li><p><strong>Small Space (<code>\\,</code>)</strong>: Inserts a small amount of space. <code>roff     .P     Small\\,space</code></p></li>
+<li><p><strong>Discretionary Hyphen (<code>\\-</code>)</strong>: Places a discretionary hyphen. <code>roff     .P     Discretionary\\-hyphen</code></p></li>
+<li><p><strong>Leader Dots (<code>\\.</code>)</strong>: Inserts leader dots, commonly used in tables of contents. <code>roff     .P     Chapter 1\\......Page 10</code></p></li>
+<li><p><strong>Italic Correction (<code>\\/</code>)</strong>: Applies italic correction. <code>roff     .ft I     Italics\\/Normal     .ft R</code></p></li>
+<li><p><strong>Escape Character (<code>\\0</code>)</strong>: Outputs the escape character itself. <code>roff     .P     The escape character is: \\0</code></p></li>
+<li><p><strong>Print Space (<code>\\</code>)</strong>: Inserts a space character. <code>roff     .P     A\\ B</code></p></li>
+<li><p><strong>Non-breaking Space (<code>\\?</code>)</strong>: Inserts a non-breaking space. <code>roff     .P     Non-breaking\\?space</code></p></li>
+<li><p><strong>Mark Location (<code>\\A</code>)</strong>: Marks a location in</p></li>
+</ol>
+<p>the text for reference. <code>roff     .P     Start here: \\A</code></p>
+<ol start="25" type="1">
+<li><p><strong>Mark Horizontal Place (<code>\\a</code>)</strong>: Marks a horizontal place in the text. <code>roff     .P     Mark\\a here</code></p></li>
+<li><p><strong>Word Boundary (<code>\\B</code>)</strong>: Indicates the beginning of a word boundary. <code>roff     .P     \\BWord\\B Boundary</code></p></li>
+<li><p><strong>Backward Branch (<code>\\b</code>)</strong>: Jumps backward to a defined macro. <code>roff     .de mark     You've jumped back to here.     ..     .P     Jumping back...\\bmark</code></p></li>
+<li><p><strong>Continue Line (<code>\\c</code>)</strong>: Continues the current line after a break. <code>roff     .P     Continue\\c     here.</code></p></li>
+<li><p><strong>Special Character (<code>\\C'xx'</code>)</strong>: Prints a special character. <code>roff     .P     Special character: \\C'(c)'</code></p></li>
+<li><p><strong>Move Down (<code>\\d</code>)</strong>: Moves down half a line. <code>roff     .P     Move down\\d now</code></p></li>
+<li><p><strong>Draw Function (<code>\\D'xx yy'</code>)</strong>: Executes a draw function with arguments. <code>roff     .P     \\D'l 100 2'  (draws a line)</code></p></li>
+<li><p><strong>Current Escape Character (<code>\\e</code>)</strong>: Prints the current escape character. <code>roff     .P     Current escape character: \\e</code></p></li>
+<li><p><strong>Synonym for \e (<code>\\E</code>)</strong>: Synonym for <code>\\e</code>. <code>roff     .P     Synonym for escape: \\E</code></p></li>
+<li><p><strong>Change Font (<code>\\f</code>)</strong>: Changes the font. <code>roff     .P     Normal text \\fB Bold text \\fR</code></p></li>
+<li><p><strong>Embed External File (<code>\\F</code>)</strong>: Embeds an external file into the document. <code>roff     .P     External file content: \\F'filename'</code></p></li>
+</ol>
+<p>Here are the examples for using the next set of GROFF escape sequences:</p>
+<ol start="36" type="1">
+<li><p><strong>Groff-specific Control (<code>\\g</code>)</strong>: Used for groff-specific controls, varies by context. <code>roff     .P     Groff control: \\g</code></p></li>
+<li><p><strong>Set Character Height (<code>\\H</code>)</strong>: Sets the character height. <code>roff     .P     Set height: \\H12 Hello</code></p></li>
+<li><p><strong>Horizontal Motion (<code>\\h'xx'</code>)</strong>: Moves text horizontally by a specified distance. <code>roff     .P     Move right: hello\\h'2i'world</code></p></li>
+<li><p><strong>Mark Horizontal Place in Register (<code>\\k</code>)</strong>: Marks a horizontal place in a register. <code>roff     .k A     .P     Marked position in register A: \\n(Au</code></p></li>
+<li><p><strong>Draw Horizontal Line (<code>\\l'xx'</code>)</strong>: Draws a horizontal line. <code>roff     .P     Line: \\l'5i'</code></p></li>
+<li><p><strong>Begin Left-to-Right Environment (<code>\\L</code>)</strong>: Begins a left-to-right text environment. <code>roff     .P     \\L This text is left-to-right</code></p></li>
+<li><p><strong>Change Color (<code>\\m</code>)</strong>: Changes the text color. <code>roff     .P     Normal \\m[red]Red Text\\m[blue] and Blue Text</code></p></li>
+<li><p><strong>Call Macro (<code>\\M</code>)</strong>: Calls a defined macro. <code>roff     .de highlight     .  \\m[red]\\$1\\m[]     ..     .P     This is \\Mhighlight[important] text</code></p></li>
+<li><p><strong>Print Number Register (<code>\\n'xx'</code>)</strong>: Prints the value of a number register. <code>roff     .nr A 5     .P     The value of A is \\n(A</code></p></li>
+<li><p><strong>Print/Increment Number Register (<code>\\n(xx</code>)</strong>: Prints and optionally increments a number register. <code>roff     .nr A 5     .P     Current value: \\n(A+1, incremented to: \\n(A</code></p></li>
+<li><p><strong>Print Character by Code (<code>\\N'xx'</code>)</strong>: Prints a character by its code. <code>roff     .P     Unicode character: \\N'U+03B1' (alpha)</code></p></li>
+<li><p><strong>Equivalent to Line Break (<code>\\newline</code>)</strong>: Inserts a line break. <code>roff     .P     Line one\\newlineLine two</code></p></li>
+<li><p><strong>Overstrike Characters (<code>\\o'xx'</code>)</strong>: Overstrikes characters. <code>roff     .P     Overstrike: \\o'AB'</code></p></li>
+<li><p><strong>Open Local Diversion (<code>\\O</code>)</strong>: Opens a local diversion. <code>roff     .P     Beginning of diversion\\O</code></p></li>
+<li><p><strong>Pause for Input (<code>\\p</code>)</strong>: Pauses for user input. <code>roff     .P     Pause here: \\p</code></p></li>
+<li><p><strong>Reverse Line Feed (<code>\\R</code>)</strong>: Reverses line feed. <code>roff     .P     Reverse feed\\R</code></p></li>
+<li><p><strong>Conditional Return (<code>\\R'xx'</code>)</strong>: Performs a conditional return based on a condition. <code>roff     .P     Conditional\\R'if \\n[cond] &gt; 5'</code></p></li>
+<li><p><strong>Carriage Return (<code>\\r</code>)</strong>: Performs a carriage return. <code>roff     .P     Return\\rStart here</code></p></li>
+<li><p><strong>Hard Return (<code>\\RET</code>)</strong>: Performs a hard return. <code>roff     .P     Hard return\\RET new line</code></p></li>
+<li><p><strong>Superimpose Characters (<code>\\S</code>)</strong>: Superimposes characters. <code>roff     .P     Superimpose: \\S'AB'</code></p></li>
+<li><p><strong>Change Point Size (<code>\\s</code>)</strong>: Changes the point size of the text. <code>roff     .P     Small text \\s-3 smaller text \\s0 back to normal</code></p></li>
+<li><p><strong>Synonym for Space (<code>\\SP</code>)</strong>: Inserts a space, synonym for <code>\\</code>. <code>roff     .P     Space:\\SPbetween\\SPwords</code></p></li>
+<li><p><strong>Insert a Space (<code>\\space</code>)</strong>: Inserts a space.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="fu">.P</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>Extra<span class="ch">\\</span>space here</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a></span></code></pre></div></li>
+<li><p><strong>Horizontal Tab (<code>\\t</code>)</strong>: Inserts a horizontal tab. <code>roff     .P     Column one\\tColumn two</code></p></li>
+<li><p><strong>Move Up Half a Line (<code>\\u</code>)</strong>: Moves text up half a line. <code>roff     .P     Lower\\uUpper</code></p></li>
+<li><p><strong>Vertical Motion (<code>\\v'xx'</code>)</strong>: Moves text vertically by a specified distance. <code>roff     .P     Down\\v'1i'Up again</code></p></li>
+<li><p><strong>Validate Vertical Position (<code>\\V</code>)</strong>: Validates the vertical position. <code>roff     .P     Validate position: \\V</code></p></li>
+<li><p><strong>Return Width of String (<code>\\w'xx'</code>)</strong>: Returns the width of the specified string. <code>roff     .P     Width of "text": \\w'text'u units</code></p></li>
+<li><p><strong>Extra Vertical Space (<code>\\x'xx'</code>)</strong>: Adds extra vertical space. <code>roff     .P     Add extra space\\x'1v'</code></p></li>
+<li><p><strong>Embed External Data (<code>\\X'xx'</code>)</strong>: Embeds external data into the document. <code>roff     .P     External data: \\X'embed this'</code></p></li>
+<li><p><strong>Groff-specific Control (<code>\\Y</code>)</strong>: Groff-specific control, varies by use. <code>roff     .P     Groff control: \\Y</code></p></li>
+<li><p><strong>Print Character Without Space (<code>\\z'xx'</code>)</strong>: Prints a character without adding space. <code>roff     .P     No\\z'space'here</code></p></li>
+<li><p><strong>Print Underlined String (<code>\\Z'xx'</code>)</strong>: Prints a string underlined. <code>roff     .P     Underlined\\Z'text'</code></p></li>
+<li><p><strong>Special Character by Name (<code>\\[name]</code>)</strong>: Inserts a special character by its name. <code>roff     .P     Omega symbol: \\[Omega]</code></p></li>
+<li><p><strong>Print a Backslash (<code>\\\\</code>)</strong>: Prints a backslash. <code>roff     .P     Double backslash: \\\\</code></p></li>
+<li><p><strong>Raise Text by Half a Line (<code>\\^</code>)</strong>: Raises text by half a line. <code>roff     .P     Normal text\\^superscript</code></p></li>
+<li><p><strong>Underline Next Character (<code>\\_</code>)</strong>: Underlines the next character. <code>roff     .P     Underline\\_u this</code></p></li>
+<li><p>**Left Single Quote (<code>\\``)**: Inserts a left single quote.     ```roff     .P     \\</code>Left single quote’ ```</p></li>
+<li><p><strong>Begin No-space Mode Group (<code>\\{</code>)</strong>: Begins a no-space mode group. <code>roff     .P     Tight\\{spacing\\}</code></p></li>
+<li><p><strong>End No-space Mode Group (<code>\\}</code>)</strong>: Ends a no-space mode group. <code>roff     .P     \\{Tight spacing\\} continues here</code></p></li>
+<li><p><strong>Zero-width Space (<code>\\|</code>)</strong>: Inserts a zero-width space. <code>roff     .P     Zero\\|width\\|space</code></p></li>
+<li><p><strong>Non-breaking Space (<code>\\~</code>)</strong>: Inserts a non-breaking space. <code>roff     .P     Non-breaking\\~space</code></p></li>
+<li><p><strong>Number of Arguments (<code>$</code>)</strong>: Contains the number of arguments passed to the current macro.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> example</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>There are <span class="ch">\\</span>n($) arguments.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a><span class="fu">.example</span><span class="st"> arg1 arg2 arg3</span></span></code></pre></div></li>
+<li><p><strong>Process ID (<code>$$</code>)</strong>: Contains the process ID of the GROFF process.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>The process ID is <span class="ch">\\</span>n($$).</span></code></pre></div></li>
+<li><p><strong>Last Diversion’s Vertical Size (<code>%</code>)</strong>: Stores the vertical size of the last diversion.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="fu">.di</span><span class="st"> some_diversion</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>Some text in diversion.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="fu">.di</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>Last diversion&#39;s height was <span class="ch">\\</span>n(%)u units.</span></code></pre></div></li>
+<li><p><strong>Current Page Number (<code>.</code>)</strong>: Holds the current page number.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a>This is page <span class="ch">\\</span>n(.).</span></code></pre></div></li>
+<li><p><strong>Number of Arguments in Current Macro (<code>.$</code>)</strong>: Stores the number of arguments in the current macro.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> show_args</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>This macro was called with <span class="ch">\\</span>n(.$) arguments.</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a><span class="fu">.show_args one two three</span></span></code></pre></div></li>
+<li><p><strong>Space Left on Page (<code>a</code>)</strong>: Indicates the amount of space left on the current page.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a>Space left on this page: <span class="ch">\\</span>n(a)u units.</span></code></pre></div></li>
+<li><p><strong>Current Line Number (<code>c</code>)</strong>: Contains the current line number in the input file.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a>This is line <span class="ch">\\</span>n(c) in the input file.</span></code></pre></div></li>
+<li><p><strong>Character Depth (<code>cdp</code>)</strong>: Indicates the depth of the current character.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a>Current character depth: <span class="ch">\\</span>n(cdp)u.</span></code></pre></div></li>
+<li><p><strong>Character Height (<code>cht</code>)</strong>: Holds the height of the current character.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a>Current character height: <span class="ch">\\</span>n(cht)u.</span></code></pre></div></li>
+<li><p><strong>Compatibility Mode Flag (<code>cp</code>)</strong>: Indicates whether compatibility mode is on. <code>roff     Compatibility mode is \\n(cp).</code></p></li>
+<li><p><strong>Depth of Last Output Line (<code>d</code>)</strong>: Contains the depth of the last output line. <code>roff     Last line depth: \\n(d)u.</code></p></li>
+<li><p><strong>Current Environment Number (<code>ev</code>)</strong>: Holds the number of the current environment. <code>roff     Current environment: \\n(ev).</code></p></li>
+<li><p><strong>Current Font Name (<code>F</code>)</strong>: Stores the name of the current font. <code>roff     Current font is \\*[F].</code></p></li>
+<li><p><strong>Current Font Number (<code>f</code>)</strong>: Contains the current font number. <code>roff     Current font number: \\n(f).</code></p></li>
+<li><p><strong>Current Font Family Name (<code>fam</code>)</strong>: Holds the name of the current font family. <code>roff     Current font family: \\*[fam].</code></p></li>
+<li><p><strong>Current Horizontal Line Position (<code>H</code>)</strong>: Stores the current horizontal line position. <code>roff     Current horizontal position: \\n(H)u.</code></p></li>
+<li><p><strong>Current Vertical Line Position (<code>h</code>)</strong>: Contains the current vertical line position. <code>roff     Current vertical position: \\n(h)u.</code></p></li>
+<li><p><strong>Current Indentation (<code>i</code>)</strong>: Indicates the current indentation. <code>roff     Current indentation: \\n(i)u.</code></p></li>
+<li><p><strong>Current Indent Amount (<code>in</code>)</strong>: Holds the amount of current indent. <code>roff     Current indent amount: \\n(in)u.</code></p></li>
+<li><p><strong>Current Adjustment Mode (<code>j</code>)</strong>: Stores the current adjustment mode. <code>roff     Current adjustment mode: \\n(j).</code></p></li>
+<li><p><strong>Kerning Flag (<code>kern</code>)</strong>: Indicates whether kerning is enabled. <code>roff     Kerning is \\n(kern).</code></p></li>
+<li><p><strong>Current Macro Name (<code>m</code>)</strong>: Contains the name of the current macro. <code>roff     .de current_macro     .  The name of this macro is '\\*[m]'.     ..     .current_macro</code></p></li>
+<li><p><strong>Needed Space Amount (<code>ne</code>)</strong>: Holds the amount of space needed. ```roff Needed</p></li>
+</ol>
+<p>space: \n(ne)u. ```</p>
+<ol start="24" type="1">
+<li><p><strong>Number Mode Flag (<code>nm</code>)</strong>: Indicates if number mode is on. <code>roff     Number mode is \\n(nm).</code></p></li>
+<li><p><strong>No-space Mode Flag (<code>ns</code>)</strong>: Indicates if no-space mode is on. <code>roff     No-space mode is \\n(ns).</code></p></li>
+<li><p><strong>Current Page Offset (<code>o</code>)</strong>: Stores the current page offset. <code>roff     Current page offset: \\n(o)u.</code></p></li>
+<li><p><strong>Current Page Length (<code>p</code>)</strong>: Holds the current page length. <code>roff     Current page length: \\n(p)u.</code></p></li>
+<li><p><strong>Next Page Number (<code>pn</code>)</strong>: Contains the number of the next page. <code>roff     Next page number is \\n(pn).</code></p></li>
+<li><p><strong>Current Point Size (<code>ps</code>)</strong>: Stores the current point size. <code>roff     Current point size: \\n(ps)p.</code></p></li>
+<li><p><strong>Provisional Vertical Spacing (<code>pvs</code>)</strong>: Indicates the provisional vertical spacing. <code>roff     Provisional vertical spacing: \\n(pvs)u.</code></p></li>
+<li><p><strong>Current Tab Settings (<code>tabs</code>)</strong>: Holds the current tab settings. <code>roff     Current tabs are set to: \\*[tabs].</code></p></li>
+<li><p><strong>Truncate Flag (<code>trunc</code>)</strong>: Indicates whether truncation is enabled. <code>roff     Truncation is \\n(trunc).</code></p></li>
+<li><p><strong>Underline Position (<code>u</code>)</strong>: Contains the underline position. <code>roff     Underline position: \\n(u)u.</code></p></li>
+<li><p><strong>Vertical Resolution (<code>v</code>)</strong>: Stores the vertical resolution. <code>roff     Vertical resolution: \\n(v).</code></p></li>
+<li><p><strong>Width of Last Line (<code>w</code>)</strong>: Holds the width of the last line. <code>roff     Width of the last line: \\n(w)u.</code></p></li>
+<li><p><strong>Warning Level (<code>warn</code>)</strong>: Indicates the current warning level. <code>roff     Warning level: \\n(warn).</code></p></li>
+<li><p><strong>Horizontal Resolution (<code>x</code>)</strong>: Contains the horizontal resolution. <code>roff     Horizontal resolution: \\n(x).</code></p></li>
+<li><p><strong>System Hours (<code>hours</code>)</strong>: Stores the system hours. <code>roff     System hours: \\n(hours).</code></p></li>
+<li><p><strong>System Minutes (<code>minutes</code>)</strong>: Holds the system minutes. <code>roff     System minutes: \\n(minutes).</code></p></li>
+<li><p><strong>System Seconds (<code>seconds</code>)</strong>: Contains the system seconds. <code>roff     System seconds: \\n(seconds).</code></p></li>
+<li><p><strong>System Year (<code>year</code>)</strong>: Stores the current system year. <code>roff     The current year is \\n(year).</code></p></li>
+<li><p><strong>Lower Left X-Coordinate (<code>llx</code>)</strong>: Holds the lower left x-coordinate of the page. <code>roff     Lower left x-coordinate: \\n(llx)u.</code></p></li>
+<li><p><strong>Lower Left Y-Coordinate (<code>lly</code>)</strong>: Contains the lower left y-coordinate of the page. <code>roff     Lower left y-coordinate: \\n(lly)u.</code></p></li>
+<li><p><strong>Line Number (<code>ln</code>)</strong>: Stores the current line number. <code>roff     This is line \\n(ln).</code></p></li>
+<li><p><strong>Line Space Size (<code>lss</code>)</strong>: Holds the line space size. <code>roff     Line space size is \\n(lss)p.</code></p></li>
+<li><p><strong>Output Page Maximum X-Coordinate (<code>opmaxx</code>)</strong>: Contains the maximum x-coordinate for the current output page. <code>roff     Output page max x-coordinate: \\n(opmaxx)u.</code></p></li>
+<li><p><strong>Output Page Maximum Y-Coordinate (<code>opmaxy</code>)</strong>: Stores the maximum y-coordinate for the current output page. <code>roff     Output page max y-coordinate: \\n(opmaxy)u.</code></p></li>
+<li><p><strong>Output Page Minimum X-Coordinate (<code>opminx</code>)</strong>: Holds the minimum x-coordinate for the current output page. <code>roff     Output page min x-coordinate: \\n(opminx)u.</code></p></li>
+<li><p><strong>Output Page Minimum Y-Coordinate (<code>opminy</code>)</strong>: Contains the minimum y-coordinate for the current output page. <code>roff     Output page min y-coordinate: \\n(opminy)u.</code></p></li>
+<li><p><strong>Upper Right X-Coordinate (<code>urx</code>)</strong>: Stores the upper right x-coordinate. <code>roff     Upper right x-coordinate: \\n(urx)u.</code></p></li>
+<li><p><strong>Upper Right Y-Coordinate (<code>ury</code>)</strong>: Holds the upper right y-coordinate. <code>roff     Upper right y-coordinate: \\n(ury)u.</code></p></li>
+<li><p><strong>Line Length (<code>l</code>)</strong>: Contains the current line length. <code>roff     Current line length: \\n(l)u.</code></p></li>
+<li><p><strong>Line Length (<code>ll</code>)</strong>: Also used to store the line length, providing a shorthand. <code>roff     Line length (shorthand): \\n(ll)u.</code></p></li>
+<li><p><strong>Title Length (<code>lt</code>)</strong>: Stores the length of the title. <code>roff     Title length: \\n(lt)u.</code></p></li>
+<li><p><strong>Indentation (<code>in</code>)</strong>: Holds the current indentation setting, similar to the <code>i</code> register. <code>roff     Current indentation: \\n(in)u.</code></p></li>
+<li><p><strong>Vertical Position Top (<code>vpt</code>)</strong>: Contains the top of the current vertical position. <code>roff     Validate page top: \\n(vpt)u.</code></p></li>
+<li><p><strong>Horizontal Position (<code>H</code>)</strong>: Also holds the current horizontal position. <code>roff     Current horizontal position (alternate): \\n(H)u.</code></p></li>
+<li><p><strong>Hyphenation Language (<code>hla</code>)</strong>: Stores the current hyphenation language setting. <code>roff     Hyphenation language is set to: \\*[hla].</code></p></li>
+<li><p><strong>Hyphenation Limit (<code>hlm</code>)</strong>: Contains the hyphenation limit. <code>roff     Hyphenation limit: \\n(hlm).</code></p></li>
+<li><p><strong>Hyphenation Flag (<code>hy</code>)</strong>: Indicates whether hyphenation is enabled. <code>roff     Hyphenation is \\n(hy) (0 for off, 1 for on).</code></p></li>
+<li><p><strong>Hyphenation Margin (<code>hym</code>)</strong>: Stores the minimum margin before hyphenating. <code>roff     Minimum hyphenation margin: \\n(hym)p.</code></p></li>
+<li><p><strong>Hyphenation Space (<code>hys</code>)</strong>: Holds the minimum space for hyphenation. ```roff Minimum hyphenation space: \n(h</p></li>
+</ol>
+<p>ys)p. ```</p>
+<ol start="63" type="1">
+<li><p><strong>No Numbering (<code>nn</code>)</strong>: Contains the number of lines with no numbering. <code>roff     Number of no-number lines: \\n(nn).</code></p></li>
+<li><p><strong>Number Mode (<code>nm</code>)</strong>: Indicates if numbering is active. <code>roff     Number mode is: \\n(nm) (1 for on, 0 for off).</code></p></li>
+<li><p><strong>Needed Vertical Space (<code>ne</code>)</strong>: Specifies how much vertical space is needed. <code>roff     Needed vertical space: \\n(ne)u.</code></p></li>
+<li><p><strong>Page Offset (<code>o</code>)</strong>: Stores the horizontal offset of the current page. <code>roff     Current page offset: \\n(o)u.</code></p></li>
+<li><p><strong>Page Length (<code>p</code>)</strong>: Indicates the length of the current page. <code>roff     Current page length: \\n(p)u.</code></p></li>
+<li><p><strong>Next Page Number (<code>pn</code>)</strong>: Specifies the number of the next page to be printed. <code>roff     Next page number will be: \\n(pn).</code></p></li>
+<li><p><strong>Point Size (<code>ps</code>)</strong>: Holds the current point size of the text. <code>roff     Current point size: \\n(ps)p.</code></p></li>
+<li><p><strong>Provisional Vertical Spacing (<code>pvs</code>)</strong>: Specifies provisional vertical spacing. <code>roff     Provisional vertical spacing: \\n(pvs)u.</code></p></li>
+<li><p><strong>Tab Settings (<code>tabs</code>)</strong>: Contains the current settings for tab stops. <code>roff     Current tab settings: \\*[tabs].</code></p></li>
+<li><p><strong>Truncation Flag (<code>trunc</code>)</strong>: Indicates if truncation is active. <code>roff     Truncation flag: \\n(trunc).</code></p></li>
+<li><p><strong>Underline Position (<code>u</code>)</strong>: Specifies the position for underlining. <code>roff     Underline position: \\n(u)u.</code></p></li>
+<li><p><strong>Vertical Resolution (<code>v</code>)</strong>: Holds the vertical resolution of the output device. <code>roff     Vertical resolution: \\n(v) dots per inch.</code></p></li>
+<li><p><strong>Width of Last Line (<code>w</code>)</strong>: Indicates the width of the last formatted line. <code>roff     Width of the last line: \\n(w)u.</code></p></li>
+<li><p><strong>Warning Level (<code>warn</code>)</strong>: Specifies the warning level set in GROFF. <code>roff     Current warning level: \\n(warn).</code></p></li>
+<li><p><strong>Horizontal Resolution (<code>x</code>)</strong>: Stores the horizontal resolution of the output device. <code>roff     Horizontal resolution: \\n(x) dots per inch.</code></p></li>
+<li><p><strong>System Hours (<code>hours</code>)</strong>: Contains the system hours at the time of processing. <code>roff     System hours: \\n(hours).</code></p></li>
+<li><p><strong>System Minutes (<code>minutes</code>)</strong>: Specifies the system minutes at the time of processing. <code>roff     System minutes: \\n(minutes).</code></p></li>
+<li><p><strong>System Seconds (<code>seconds</code>)</strong>: Holds the system seconds at the time of processing. <code>roff     System seconds: \\n(seconds).</code></p></li>
+<li><p><strong>System Year (<code>year</code>)</strong>: Contains the year according to the system’s clock. <code>roff     The current year is \\n(year).</code></p></li>
+<li><p><strong>Lower Left X-Coordinate (<code>llx</code>)</strong>: Stores the lower left x-coordinate of the page. <code>roff     Lower left x-coordinate: \\n(llx)u.</code></p></li>
+<li><p><strong>Lower Left Y-Coordinate (<code>lly</code>)</strong>: Holds the lower left y-coordinate of the page. <code>roff     Lower left y-coordinate: \\n(lly)u.</code></p></li>
+<li><p><strong>Line Number (<code>ln</code>)</strong>: Contains the current line number in the input. <code>roff     Current line number: \\n(ln).</code></p></li>
+<li><p><strong>Line Space Size (<code>lss</code>)</strong>: Indicates the space between lines. <code>roff     Line space size: \\n(lss)p.</code></p></li>
+<li><p><strong>Output Page Maximum X-Coordinate (<code>opmaxx</code>)</strong>: Holds the maximum x-coordinate for the current output page. <code>roff     Output page max x-coordinate: \\n(opmaxx)u.</code></p></li>
+<li><p><strong>Output Page Maximum Y-Coordinate (<code>opmaxy</code>)</strong>: Specifies the maximum y-coordinate for the current output page. <code>roff     Output page max y-coordinate: \\n(opmaxy)u.</code></p></li>
+<li><p><strong>Output Page Minimum X-Coordinate (<code>opminx</code>)</strong>: Contains the minimum x-coordinate for the current output page. <code>roff     Output page min x-coordinate: \\n(opminx)u.</code></p></li>
+<li><p><strong>Output Page Minimum Y-Coordinate (<code>opminy</code>)</strong>: Indicates the minimum y-coordinate for the current output page. <code>roff     Output page min y-coordinate: \\n(opminy)u.</code></p></li>
+<li><p><strong>Upper Right X-Coordinate (<code>urx</code>)</strong>: Stores the upper right x-coordinate. <code>roff     Upper right x-coordinate: \\n(urx)u.</code></p></li>
+<li><p><strong>Upper Right Y-Coordinate (<code>ury</code>)</strong>: Holds the upper right y-coordinate. <code>roff     Upper right y-coordinate: \\n(ury)u.</code></p></li>
+<li><p><strong>Line Length (<code>l</code>)</strong>: Contains the current line length. <code>roff     Current line length: \\n(l)u.</code></p></li>
+<li><p><strong>Line Length (<code>ll</code>)</strong>: Also used to store the line length, providing a shorthand. <code>roff     Line length (shorthand): \\n(ll)u.</code></p></li>
+<li><p><strong>Title Length (<code>lt</code>)</strong>: Stores the length of the title. <code>roff     Title length: \\n(lt)u.</code></p></li>
+<li><p><strong>Indentation (<code>in</code>)</strong>: Holds the current indentation setting, similar to the <code>i</code> register. <code>roff     Current indentation: \\n(in)u.</code></p></li>
+<li><p><strong>Vertical Position Top (<code>vpt</code>)</strong>: Contains the top of the current vertical position. <code>roff     Validate page top: \\n(vpt)u.</code></p></li>
+<li><p><strong>Hyphenation Language (<code>hla</code>)</strong>: Stores the current hyphenation language setting. <code>roff     Hyphenation language is set to: \\*[hla].</code></p></li>
+<li><p><strong>Hyphenation Limit (<code>hlm</code>)</strong>: Contains the hyphenation limit. <code>roff     Hyphenation limit: \\n(hlm).</code></p></li>
+<li><p><strong>Hyphenation Flag (<code>hy</code>)</strong>: Indicates whether hyphenation is enabled. <code>roff     Hyphenation is \\n(hy) (0 for off, 1 for on).</code></p></li>
+<li><p><strong>Hyphenation Margin (<code>hym</code>)</strong>: Stores the minimum margin before hyphenating. <code>roff     Minimum hyphenation margin: \\n(hym)p.</code></p></li>
+<li><p><strong>Hyphenation Space (<code>hys</code>)</strong>: Holds the minimum space for hyphenation. <code>roff     Minimum hyphenation space: \\n(hys)p.</code></p></li>
+<li><p><strong>No Numbering (<code>nn</code>)</strong>: Contains the number of lines with no numbering. <code>roff     Number of no-number lines: \\n(nn).</code></p></li>
+<li><p><strong>Font Number (<code>fn</code>)</strong>: Holds the font number, often used in conjunction with <code>.ft</code>. <code>roff     .ft 2     Using font number: \\n(fn).</code></p></li>
+<li><p><strong>Tab Width (<code>tabwidth</code>)</strong>: Indicates the width set for tabs. <code>roff     Tab width: \\n(tabwidth)u.</code></p></li>
+<li><p><strong>.ab</strong> - Abort with a message.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.ab &lt;message: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="fu">.ab</span><span class="st"> &quot;Error: Unexpected end of file.&quot;</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.ad</strong> - Adjust line alignments.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.ad &lt;mode: l | r | c | b | n&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a><span class="fu">.ad</span><span class="st"> b</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.af</strong> - Assign a format to a number register.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.af &lt;register: string&gt;, &lt;format: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a><span class="fu">.nr</span><span class="st"> count </span><span class="dv">10</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true"></a><span class="fu">.af</span><span class="st"> count I</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.aln</strong> - Alias a new name to an existing register.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.aln &lt;new_name: string&gt;, &lt;old_name: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="fu">.nr</span><span class="st"> a </span><span class="dv">10</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a><span class="fu">.aln</span><span class="st"> b a</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.als</strong> - Alias a new name to an existing macro or string.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.als &lt;new_name: string&gt;, &lt;old_name: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a><span class="fu">.ds</span><span class="st"> oldStr &quot;Hello, World!&quot;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a><span class="fu">.als</span><span class="st"> newStr oldStr</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.am</strong> - Append content to an existing macro.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.am &lt;macro_name: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> myMacro</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true"></a>Original content.</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true"></a><span class="fu">.am</span><span class="st"> myMacro</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true"></a>Appended content.</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true"></a><span class="fu">..</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.am1</strong> - Append content to an existing macro, including a newline at the end.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.am1 &lt;macro_name: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> myMacro</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true"></a>Original content.</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true"></a><span class="fu">.am1 myMacro</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true"></a>Appended content with newline.</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true"></a><span class="fu">..</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.ami</strong> - Append content to an existing macro with an indent.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.ami &lt;macro_name: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> myMacro</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a>Original content.</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true"></a><span class="fu">.ami</span><span class="st"> myMacro</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true"></a><span class="fu">.in</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true"></a>Indented appended content.</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true"></a><span class="fu">.in</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true"></a><span class="fu">..</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.ami1</strong> - Append content to an existing macro with an indent, including a newline at the end.</p>
+<ul>
+<li><p><strong>Signature</strong>: <code>.ami1 &lt;macro_name: string&gt;</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a><span class="fu">.de</span><span class="st"> myMacro</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true"></a>Original content.</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true"></a><span class="fu">..</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true"></a><span class="fu">.ami1 myMacro</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true"></a><span class="fu">.in</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true"></a>Indented appended content with newline.</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true"></a><span class="fu">.in</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true"></a><span class="fu">..</span></span></code></pre></div></li>
+</ul></li>
+<li><p><strong>.as</strong> - Append text to a string register.</p></li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.as &lt;register: string&gt;, &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds myString "Initial"      .as myString " Appended"</code></li>
+</ul>
+<ol start="11" type="1">
+<li><strong>.as1</strong> - Append text to a string register, adding a newline at the end.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.as1 &lt;register: string&gt;, &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds myString "Initial"      .as1 myString " Appended with newline\n"</code></li>
+</ul>
+<ol start="12" type="1">
+<li><strong>.asciify</strong> - Convert a string to ASCII.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.asciify &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .asciify "Café"  \" Outputs 'Cafe'</code></li>
+</ul>
+<ol start="13" type="1">
+<li><strong>.backtrace</strong> - Print a stack trace of macros and diversions.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.backtrace</code></li>
+<li><strong>Example</strong>: <code>roff      .backtrace  \" Useful for debugging complex macro calls</code></li>
+</ul>
+<ol start="14" type="1">
+<li><strong>.bd</strong> - Embolden a font by overstriking.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.bd &lt;font: string&gt;, &lt;space: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .bd R 2  \" Emboldens the Roman font with 2 units of overstriking</code></li>
+</ul>
+<ol start="15" type="1">
+<li><strong>.blm</strong> - Set the macro to invoke at the bottom of the page.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.blm &lt;macro: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de Footer      .ce 0      Page footer content.      ..      .blm Footer</code></li>
+</ul>
+<ol start="16" type="1">
+<li><strong>.box</strong> - Draw a box.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.box &lt;height: number&gt;, &lt;width: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .box 5 10  \" Draws a box 5 units high and 10 units wide</code></li>
+</ul>
+<ol start="17" type="1">
+<li><strong>.bp</strong> - Begin a new page.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.bp &lt;page: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .bp  \" Start a new page immediately</code></li>
+</ul>
+<ol start="18" type="1">
+<li><strong>.br</strong> - Insert a line break.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.br</code></li>
+<li><strong>Example</strong>: <code>roff      This line is broken.      .br      New line starts here.</code></li>
+</ul>
+<ol start="19" type="1">
+<li><strong>.break</strong> - Synonym for <code>.br</code>.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.break</code></li>
+<li><strong>Example</strong>: <code>roff      This line is also broken.      .break      Another new line starts here.</code></li>
+</ul>
+<ol start="20" type="1">
+<li><strong>.brp</strong> - Break and output a page.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.brp</code></li>
+<li><strong>Example</strong>: <code>roff      Some content here.      .brp  \" Forces a page break and outputs the current page</code></li>
+</ul>
+<ol start="21" type="1">
+<li><strong>.c2</strong> - Change the nobreak control character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.c2 &lt;character: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .c2 &amp;  \" Changes the nobreak control character to '&amp;'</code></li>
+</ul>
+<ol start="22" type="1">
+<li><strong>.cc</strong> - Change the control character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.cc &lt;character: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .cc @  \" Sets '@' as the new control character</code></li>
+</ul>
+<ol start="23" type="1">
+<li><strong>.ce</strong> - Center text for a given number of lines.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ce &lt;lines: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ce 3      Centered line 1      Centered line 2      Centered line 3</code></li>
+</ul>
+<ol start="24" type="1">
+<li><strong>.cf</strong> - Copy a file to the output.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.cf &lt;filename: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .cf /path/to/file.txt  \" Copies the contents of file.txt to the output</code></li>
+</ul>
+<ol start="25" type="1">
+<li><strong>.cflags</strong> - Set character flags.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.cflags &lt;flag: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .cflags 1  \" Set character flag to 1 (depends on system interpretation)</code></li>
+</ul>
+<ol start="26" type="1">
+<li><strong>.ch</strong> - Schedule a macro for execution at a specified position.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ch &lt;macro: string&gt;, &lt;position: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de Trigger      Triggered content here.      ..      .ch Trigger 10  \" Executes 'Trigger' at 10 units from top of page</code></li>
+</ul>
+<ol start="27" type="1">
+<li><strong>.char</strong> - Define a new character.</li>
+</ol>
+<ul>
+<li>**Signature</li>
+</ul>
+<p><strong>: <code>.char &lt;name: string&gt;, &lt;description: string&gt;</code> - </strong>Example**: <code>roff      .char myChar \(*A  \" Defines 'myChar' as the special character sequence '*A'</code></p>
+<ol start="28" type="1">
+<li><strong>.chop</strong> - Chop characters from a string register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.chop &lt;register: string&gt;, &lt;length: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds myString "Hello, World!"      .chop myString 6  \" Retains 'Hello,' from 'Hello, World!'</code></li>
+</ul>
+<ol start="29" type="1">
+<li><strong>.class</strong> - Define a character class.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.class &lt;class: number&gt;, &lt;members: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .class 1 "AEIOU"  \" Defines class 1 containing vowels</code></li>
+</ul>
+<ol start="30" type="1">
+<li><strong>.close</strong> - Close a previously opened file.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.close &lt;file: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .open myFile "file.txt"      .write myFile "Writing to file."      .close myFile</code></li>
+</ul>
+<ol start="31" type="1">
+<li><strong>.color</strong> - Set the output color for the text.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.color &lt;color: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .color blue      This text will be in blue.      .color  \" Reset to default color</code></li>
+</ul>
+<ol start="32" type="1">
+<li><strong>.composite</strong> - Composite two characters.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.composite &lt;dest: register&gt;, &lt;src: register&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nr a 97  \" ASCII for 'a'      .nr b 98  \" ASCII for 'b'      .composite a b</code></li>
+</ul>
+<ol start="33" type="1">
+<li><strong>.continue</strong> - Continue interrupted text.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.continue</code></li>
+<li><strong>Example</strong>: <code>roff      Some text that was interrupted.      .continue</code></li>
+</ul>
+<ol start="34" type="1">
+<li><strong>.cp</strong> - Set compatibility mode percentage.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.cp &lt;percentage: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .cp 100  \" 100% compatibility with classic troff</code></li>
+</ul>
+<ol start="35" type="1">
+<li><strong>.cs</strong> - Set constant space width for a font.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.cs &lt;font: string&gt;, &lt;space: number&gt;, &lt;stretch: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .cs R 10 2  \" Set constant space width for Roman font</code></li>
+</ul>
+<ol start="36" type="1">
+<li><strong>.cu</strong> - Underline text for a given number of lines.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.cu &lt;lines: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .cu 1      This line will be underlined.</code></li>
+</ul>
+<ol start="37" type="1">
+<li><strong>.da</strong> - Define a diversion (append mode).</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.da &lt;register: register?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .da appendDiv      Appended content here.      .da</code></li>
+</ul>
+<ol start="38" type="1">
+<li><strong>.de</strong> - Define or redefine a macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.de &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de SayHello      .ce      Hello, world!      ..      .SayHello  \" Invokes the macro</code></li>
+</ul>
+<ol start="39" type="1">
+<li><strong>.de1</strong> - Define a macro, adding a newline at the end.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.de1 &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de1 SayGoodbye      .ce      Goodbye, world!      ..      .SayGoodbye  \" Invokes the macro</code></li>
+</ul>
+<ol start="40" type="1">
+<li><strong>.defcolor</strong> - Define a new color.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.defcolor &lt;name: string&gt;, &lt;model: string&gt;, &lt;components: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .defcolor myGreen rgb 0,128,0      .color myGreen      Text in custom green color.      .color  \" Reset to default color</code></li>
+</ul>
+<ol start="41" type="1">
+<li><strong>.dei</strong> - Define an indirect macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.dei &lt;macro: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .dei IndirectMacro      .nr a 5      Value of a is \\n[a].      ..      .IndirectMacro</code></li>
+</ul>
+<ol start="42" type="1">
+<li><strong>.dei1</strong> - Define an indirect macro with a newline at the end.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.dei1 &lt;macro: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .dei1 IndirectMacroNewline      .nr b 10      Value of b is \\n[b].      ..      .IndirectMacroNewline</code></li>
+</ul>
+<ol start="43" type="1">
+<li><strong>.device</strong> - Specify the output device.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.device &lt;name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .device PS  \" Set output device to PostScript</code></li>
+</ul>
+<ol start="44" type="1">
+<li><strong>.devicem</strong> - Specify the output device mode.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.devicem &lt;name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .devicem color  \" Set device mode to color</code></li>
+</ul>
+<ol start="45" type="1">
+<li><strong>.di</strong> - Divert output to a register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.di &lt;register: register?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .di outputDiv      Diverted text content.      .di</code></li>
+</ul>
+<ol start="46" type="1">
+<li><strong>.do</strong> - Execute a diversion.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.do &lt;string: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .di myDiv      Content inside myDiv.      .di      .do myDiv  \" Outputs the content of 'myDiv'</code></li>
+</ul>
+<ol start="47" type="1">
+<li><strong>.ds</strong> - Define or redefine a string.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ds &lt;name: string&gt;, &lt;content: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds MyString "This is a defined string."</code></li>
+</ul>
+<ol start="48" type="1">
+<li><strong>.ds1</strong> - Define a string with a newline at the end.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ds1 &lt;name: string&gt;, &lt;content: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds1 MyStringNewline "This string ends with a newline\n"</code></li>
+</ul>
+<ol start="49" type="1">
+<li><strong>.dt</strong> - Set tab stops dynamically.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.dt &lt;tabset: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .dt T10,20,30  \" Sets tab stops at positions 10, 20, and 30</code></li>
+</ul>
+<ol start="50" type="1">
+<li><strong>.ec</strong> - End change character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ec &lt;character: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ec #  \" Sets '#' as the end change character</code></li>
+</ul>
+<ol start="51" type="1">
+<li><strong>.ecr</strong> - Reset the escape character to its default.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ecr</code></li>
+<li><strong>Example</strong>: <code>roff      .ecr  \" Reset escape character to default</code></li>
+</ul>
+<ol start="52" type="1">
+<li><strong>.ecs</strong> - Save the current escape character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ecs</code></li>
+<li><strong>Example</strong>: <code>roff      .ecs  \" Saves the current escape character</code></li>
+</ul>
+<ol start="53" type="1">
+<li><strong>.el</strong> - Else part of an if-else condition.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.el</code></li>
+<li><strong>Example</strong>: <code>roff      .if n .tm "It is nroff."      .el .tm "It is not nroff."</code></li>
+</ul>
+<ol start="54" type="1">
+<li><strong>.em</strong> - Set end of input trap macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.em &lt;macro: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de EndMacro      .tm "Reached the end of input."      ..      .em EndMacro</code></li>
+</ul>
+<ol start="55" type="1">
+<li><strong>.eo</strong> - Turn off the escape mechanism.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.eo</code></li>
+<li><strong>Example</strong>: <code>roff      .eo  \" No longer recognize escape characters</code></li>
+</ul>
+<ol start="56" type="1">
+<li><strong>.ev</strong> - Switch environment.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ev &lt;environment: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ev 2  \" Switch to environment 2</code></li>
+</ul>
+<ol start="57" type="1">
+<li><strong>.evc</strong> - Switch environment conditionally.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.evc &lt;environment: number&gt;</code></li>
+<li><strong>Example</strong>: ```roff .evc 1 " Conditionally switch to</li>
+</ul>
+<p>environment 1 ```</p>
+<ol start="58" type="1">
+<li><strong>.ex</strong> - Exit from GROFF.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ex</code></li>
+<li><strong>Example</strong>: <code>roff      .ex  \" Exit from GROFF processing</code></li>
+</ul>
+<ol start="59" type="1">
+<li><strong>.fam</strong> - Set the font family.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fam &lt;family: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fam Times  \" Set font family to Times</code></li>
+</ul>
+<ol start="60" type="1">
+<li><strong>.fc</strong> - Set field delimiters.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fc &lt;char: char&gt;, &lt;char?: char?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fc | ,  \" Set field delimiters to '|' and ','</code></li>
+</ul>
+<ol start="61" type="1">
+<li><strong>.fchar</strong> - Define a fallback character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fchar &lt;name: string&gt;, &lt;description: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fchar "fbA" "\\(Aa"  \" Defines a fallback character 'fbA' as \(Aa</code></li>
+</ul>
+<ol start="62" type="1">
+<li><strong>.fcolor</strong> - Set the fill color for backgrounds.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fcolor &lt;color: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fcolor "cyan"      Background is now cyan.      .fcolor  \" Reset to default color</code></li>
+</ul>
+<ol start="63" type="1">
+<li><strong>.fi</strong> - Fill text, which adjusts spaces to align both left and right margins.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fi</code></li>
+<li><strong>Example</strong>: <code>roff      .fi  \" Enables filled text</code></li>
+</ul>
+<ol start="64" type="1">
+<li><strong>.fl</strong> - Flush all output.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fl</code></li>
+<li><strong>Example</strong>: <code>roff      .fl  \" Forces all unwritten output to be written</code></li>
+</ul>
+<ol start="65" type="1">
+<li><strong>.fp</strong> - Mount a font at a specific position.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fp &lt;font_position: number&gt;, &lt;font_name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fp 3 Courier  \" Mounts 'Courier' font at position 3</code></li>
+</ul>
+<ol start="66" type="1">
+<li><strong>.fschar</strong> - Define a fallback space character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fschar &lt;name: string&gt;, &lt;description: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fschar "fbSpace" "\\x'10'"  \" Defines a fallback space character with 10 units width</code></li>
+</ul>
+<ol start="67" type="1">
+<li><strong>.fspecial</strong> - Designate a special font.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fspecial &lt;name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fspecial "Symbol"  \" Designates 'Symbol' as a special font</code></li>
+</ul>
+<ol start="68" type="1">
+<li><strong>.ft</strong> - Set the current font.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ft &lt;font: string?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ft R  \" Set the font to Roman</code></li>
+</ul>
+<ol start="69" type="1">
+<li><strong>.ftr</strong> - Translate one font to another.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ftr &lt;original: string&gt;, &lt;replacement: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ftr Times Helvetica  \" Translates 'Times' to 'Helvetica'</code></li>
+</ul>
+<ol start="70" type="1">
+<li><strong>.fzoom</strong> - Zoom a font by changing its x and y magnification.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.fzoom &lt;font: string&gt;, &lt;x_mag: number&gt;, &lt;y_mag: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .fzoom Helvetica 1.5 1.5  \" Zooms 'Helvetica' by 1.5 times both horizontally and vertically</code></li>
+</ul>
+<ol start="71" type="1">
+<li><strong>.gcolor</strong> - Set the glyph color.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.gcolor &lt;color: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .gcolor "red"      This glyph will be red.      .gcolor  \" Reset to default color</code></li>
+</ul>
+<ol start="72" type="1">
+<li><strong>.hc</strong> - Set the hyphenation character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hc &lt;char: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hc -  \" Sets the hyphenation character to '-'</code></li>
+</ul>
+<ol start="73" type="1">
+<li><strong>.hcode</strong> - Set a specific hyphenation code.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hcode &lt;code: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hcode "en_us"  \" Sets the hyphenation code to English (US)</code></li>
+</ul>
+<ol start="74" type="1">
+<li><strong>.hla</strong> - Set the hyphenation language.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hla &lt;language: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hla "Spanish"  \" Sets the hyphenation language to Spanish</code></li>
+</ul>
+<ol start="75" type="1">
+<li><strong>.hlm</strong> - Set the hyphenation limit.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hlm &lt;limit: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hlm 2  \" Sets the hyphenation limit to 2</code></li>
+</ul>
+<ol start="76" type="1">
+<li><strong>.hpf</strong> - Set the hyphenation pattern file.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hpf &lt;pattern: string&gt;</code></li>
+<li><strong>Example</strong>: ```roff .hpf “/path/to/pattern.file” " Uses</li>
+</ul>
+<p>the specified pattern file for hyphenation ```</p>
+<ol start="77" type="1">
+<li><strong>.hpfa</strong> - Append to the hyphenation pattern file.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hpfa &lt;pattern: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hpfa "additional.patterns"  \" Appends additional patterns to the current hyphenation pattern file</code></li>
+</ul>
+<ol start="78" type="1">
+<li><strong>.hpfcode</strong> - Set a hyphenation pattern code.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hpfcode &lt;code: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hpfcode "en_us"  \" Sets the hyphenation pattern code for English (US)</code></li>
+</ul>
+<ol start="79" type="1">
+<li><strong>.hw</strong> - Add a hyphenation exception word.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hw &lt;word: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hw "groff"  \" Adds 'groff' as an exception to standard hyphenation rules</code></li>
+</ul>
+<ol start="80" type="1">
+<li><strong>.hy</strong> - Set hyphenation on or off.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hy &lt;switch: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hy 1  \" Turns hyphenation on</code></li>
+</ul>
+<ol start="81" type="1">
+<li><strong>.hym</strong> - Set minimum hyphenation margin.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hym &lt;min: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hym 3  \" Sets the minimum hyphenation margin to 3</code></li>
+</ul>
+<ol start="82" type="1">
+<li><strong>.hys</strong> - Set minimum hyphenation space.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.hys &lt;min: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .hys 2  \" Sets the minimum space for hyphenation to 2</code></li>
+</ul>
+<ol start="83" type="1">
+<li><strong>.ie</strong> - If-else condition.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ie &lt;condition: expression&gt; &lt;true-macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ie n .tm "It's nroff"      .el .tm "It's troff"</code></li>
+</ul>
+<ol start="84" type="1">
+<li><strong>.if</strong> - If condition.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.if &lt;condition: expression&gt; &lt;true-macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .if n .tm "Running nroff"</code></li>
+</ul>
+<ol start="85" type="1">
+<li><strong>.ig</strong> - Ignore input until an ending macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ig &lt;end: string?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ig END      This text will be ignored.      END</code></li>
+</ul>
+<ol start="86" type="1">
+<li><strong>.in</strong> - Set or increment indent.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.in &lt;indent: size&gt;, &lt;increment?: boolean?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .in 2i  \" Sets indent to 2 inches</code></li>
+</ul>
+<ol start="87" type="1">
+<li><strong>.it</strong> - Set input line trap.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.it &lt;lines: number&gt;, &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .it 1 PrintLine      .de PrintLine      .tm "This line is trapped"      ..</code></li>
+</ul>
+<ol start="88" type="1">
+<li><strong>.itc</strong> - Set input line trap with continuation.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.itc &lt;lines: number&gt;, &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .itc 3 ContinueTrap      .de ContinueTrap      .tm "Continuing to trap after three lines"      ..</code></li>
+</ul>
+<ol start="89" type="1">
+<li><strong>.kern</strong> - Adjust kerning amount.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.kern &lt;amount: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .kern 5  \" Adjusts kerning by 5 units</code></li>
+</ul>
+<ol start="90" type="1">
+<li><strong>.lc</strong> - Set leader character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.lc &lt;char: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .lc .  \" Sets the leader character to a dot</code></li>
+</ul>
+<ol start="91" type="1">
+<li><strong>.length</strong> - Get the length of a string in a register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.length &lt;register: register&gt;, &lt;string: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds myString "Hello, world!"      .length L myString      .tm "\\n[L]u units long"</code></li>
+</ul>
+<ol start="92" type="1">
+<li><strong>.lf</strong> - Set line and file for debugging.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.lf &lt;line: number&gt;, &lt;file: string?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .lf 100 myfile.groff</code></li>
+</ul>
+<ol start="93" type="1">
+<li><strong>.lg</strong> - Ligature control.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.lg &lt;flag: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .lg 0  \" Turns off ligatures</code></li>
+</ul>
+<ol start="94" type="1">
+<li><strong>.linetabs</strong> - Set handling for tabs in line mode.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.linetabs &lt;mode: enum&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .linetabs on  \" Enables tab handling in line mode</code></li>
+</ul>
+<ol start="95" type="1">
+<li><strong>.ll</strong> - Set line length.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ll &lt;length: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ll 6i  \" Sets line length to 6 inches</code></li>
+</ul>
+<ol start="96" type="1">
+<li><strong>.ls</strong> - Set line spacing.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ls &lt;space: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ls 2  \" Sets line spacing to double</code></li>
+</ul>
+<ol start="97" type="1">
+<li><strong>.lsm</strong> - Set last line spacing margin.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.lsm &lt;space: number&gt;</code></li>
+<li><strong>Example</strong>: ```roff .lsm 1</li>
+</ul>
+<p>" Sets last line spacing margin to 1 ```</p>
+<ol start="98" type="1">
+<li><strong>.lt</strong> - Set title length.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.lt &lt;length: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .lt 7.5i  \" Sets title length to 7.5 inches</code></li>
+</ul>
+<ol start="99" type="1">
+<li><strong>.mc</strong> - Set marginal character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.mc &lt;margin: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .mc | 5  \" Sets a marginal character '|' at every 5th column</code></li>
+</ul>
+<ol start="100" type="1">
+<li><p><strong>.mk</strong> - Mark vertical place. - <strong>Signature</strong>: <code>.mk &lt;register: register&gt;</code> - <strong>Example</strong>: <code>roff       .mk A       .sp 3i       .tm "\\n[A]u down from marked place"</code></p></li>
+<li><p><strong>.mso</strong> - Mount standard output.</p></li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.mso &lt;file: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .mso some_macros.tmac</code></li>
+</ul>
+<ol start="102" type="1">
+<li><strong>.msoquiet</strong> - Mount standard output quietly without any confirmation or output messages.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.msoquiet</code></li>
+<li><strong>Example</strong>: <code>roff      .msoquiet</code></li>
+</ul>
+<ol start="103" type="1">
+<li><strong>.na</strong> - No adjust. This request disables line adjustment.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.na</code></li>
+<li><strong>Example</strong>: <code>roff      .na</code></li>
+</ul>
+<ol start="104" type="1">
+<li><strong>.ne</strong> - Need vertical space. Ensures that a specified amount of vertical space is available.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ne &lt;amount: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ne 2i</code></li>
+</ul>
+<ol start="105" type="1">
+<li><strong>.nf</strong> - No fill. This request turns off line filling and adjustment.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nf</code></li>
+<li><strong>Example</strong>: <code>roff      .nf      Here is some preformatted text.      .fi  \" Return to filled text</code></li>
+</ul>
+<ol start="106" type="1">
+<li><strong>.nh</strong> - No hyphenation. Turns off hyphenation.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nh</code></li>
+<li><strong>Example</strong>: <code>roff      .nh</code></li>
+</ul>
+<ol start="107" type="1">
+<li><strong>.nm</strong> - Set number mode. Specifies how lines should be numbered.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nm &lt;increment: number?&gt;, &lt;start: number?&gt;, &lt;width: number?&gt;, &lt;pad: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nm 1 1 5 0</code></li>
+</ul>
+<ol start="108" type="1">
+<li><strong>.nn</strong> - No number next number of lines. This request suppresses line numbers for the specified number of lines.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nn &lt;number: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nn 10</code></li>
+</ul>
+<ol start="109" type="1">
+<li><strong>.nop</strong> - No operation. This request is often used as a placeholder in macros.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nop</code></li>
+<li><strong>Example</strong>: <code>roff      .nop</code></li>
+</ul>
+<ol start="110" type="1">
+<li><strong>.nr</strong> - Set or increment a number register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nr &lt;register: register&gt;, &lt;value: number&gt;, &lt;increment?: boolean?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nr Counter 10      .nr Counter +1  \" Increment Counter by 1</code></li>
+</ul>
+<ol start="111" type="1">
+<li><strong>.nroff</strong> - Switch to nroff mode. Useful when using groff to emulate nroff behavior.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nroff</code></li>
+<li><strong>Example</strong>: <code>roff      .nroff</code></li>
+</ul>
+<ol start="112" type="1">
+<li><strong>.ns</strong> - No space mode. Suppresses spacing that normally occurs after macros.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ns</code></li>
+<li><strong>Example</strong>: <code>roff      .ns</code></li>
+</ul>
+<ol start="113" type="1">
+<li><strong>.nx</strong> - Switch to next file. Terminates processing of the current file and continues with the next file.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.nx &lt;file: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nx next_file.groff</code></li>
+</ul>
+<ol start="114" type="1">
+<li><strong>.open</strong> - Open a file for writing.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.open &lt;file: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .open myFile      .write myFile "Writing to this file."</code></li>
+</ul>
+<ol start="115" type="1">
+<li><strong>.opena</strong> - Open a file for appending.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.opena &lt;file: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .opena myFile      .write myFile "Appending this line to the file."</code></li>
+</ul>
+<ol start="116" type="1">
+<li><strong>.os</strong> - Output saved lines. Useful in combination with diversion commands.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.os</code></li>
+<li><strong>Example</strong>: <code>roff      .os</code></li>
+</ul>
+<ol start="117" type="1">
+<li><strong>.output</strong> - Set an output line processing macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.output &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de myOutput      .tm "Processing output line."      ..      .output myOutput</code></li>
+</ul>
+<ol start="118" type="1">
+<li><strong>.pc</strong> - Set the page number character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pc &lt;char: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .pc %</code></li>
+</ul>
+<ol start="119" type="1">
+<li><strong>.pev</strong> - Preserve environment. Saves the current environment</li>
+</ol>
+<p>settings. - <strong>Signature</strong>: <code>.pev</code> - <strong>Example</strong>: <code>roff      .pev</code></p>
+<ol start="120" type="1">
+<li><strong>.pi</strong> - Pipe output to a command.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pi &lt;command: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .pi "sort"      This line will be sorted.</code></li>
+</ul>
+<ol start="121" type="1">
+<li><strong>.pl</strong> - Set page length.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pl &lt;length: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .pl 11i  \" Sets the page length to 11 inches</code></li>
+</ul>
+<ol start="122" type="1">
+<li><strong>.pm</strong> - Print macro definitions.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pm</code></li>
+<li><strong>Example</strong>: <code>roff      .pm  \" Prints all macro definitions to the terminal</code></li>
+</ul>
+<ol start="123" type="1">
+<li><strong>.pn</strong> - Set next page number.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pn &lt;number: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .pn 10  \" Sets the next page number to 10</code></li>
+</ul>
+<ol start="124" type="1">
+<li><strong>.pnr</strong> - Print number register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pnr</code></li>
+<li><strong>Example</strong>: <code>roff      .pnr  \" Prints the values of all number registers</code></li>
+</ul>
+<ol start="125" type="1">
+<li><strong>.po</strong> - Set page offset.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.po &lt;offset: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .po 2i  \" Sets the page offset to 2 inches</code></li>
+</ul>
+<ol start="126" type="1">
+<li><strong>.ps</strong> - Set point size.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ps &lt;size: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ps 12  \" Sets the point size to 12</code></li>
+</ul>
+<ol start="127" type="1">
+<li><strong>.psbb</strong> - Process PostScript bounding box.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.psbb &lt;filename: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .psbb "image.eps"</code></li>
+</ul>
+<ol start="128" type="1">
+<li><strong>.pso</strong> - Pipe output to shell command.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pso &lt;command: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .pso "lpr"  \" Pipes output to the printer</code></li>
+</ul>
+<ol start="129" type="1">
+<li><strong>.ptr</strong> - Push trace state.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ptr</code></li>
+<li><strong>Example</strong>: <code>roff      .ptr  \" Saves the current trace state</code></li>
+</ul>
+<ol start="130" type="1">
+<li><strong>.pvs</strong> - Set provisional vertical space.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.pvs &lt;space: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .pvs 12p  \" Sets provisional vertical space to 12 points</code></li>
+</ul>
+<ol start="131" type="1">
+<li><strong>.rchar</strong> - Remove character definition.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rchar &lt;character: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rchar "x"  \" Removes the character definition for 'x'</code></li>
+</ul>
+<ol start="132" type="1">
+<li><strong>.rd</strong> - Read input until an end macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rd &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rd EndInput      Enter your input here.      EndInput</code></li>
+</ul>
+<ol start="133" type="1">
+<li><strong>.return</strong> - Return from diversion.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.return</code></li>
+<li><strong>Example</strong>: <code>roff      .return  \" Ends the current diversion and returns to the main stream</code></li>
+</ul>
+<ol start="134" type="1">
+<li><strong>.rfschar</strong> - Remove a fallback space character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rfschar &lt;name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rfschar "fbSpace"</code></li>
+</ul>
+<ol start="135" type="1">
+<li><strong>.rj</strong> - Right justify.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rj &lt;justify: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rj  \" Right justifies the following text</code></li>
+</ul>
+<ol start="136" type="1">
+<li><strong>.rm</strong> - Remove macro or string.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rm &lt;name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rm "myMacro"  \" Removes the macro or string named 'myMacro'</code></li>
+</ul>
+<ol start="137" type="1">
+<li><strong>.rn</strong> - Rename string or number register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rn &lt;old: string&gt;, &lt;new: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rn "oldName" "newName"</code></li>
+</ul>
+<ol start="138" type="1">
+<li><strong>.rnn</strong> - Rename number register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rnn &lt;old: string&gt;, &lt;new: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rnn "oldReg" "newReg"</code></li>
+</ul>
+<ol start="139" type="1">
+<li><strong>.rr</strong> - Remove register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rr &lt;register: register&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rr myRegister  \" Removes the register named 'myRegister'</code></li>
+</ul>
+<ol start="140" type="1">
+<li><strong>.rs</strong></li>
+</ol>
+<ul>
+<li>Restore space mode.
+<ul>
+<li><p><strong>Signature</strong>: <code>.rs</code></p></li>
+<li><p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode roff"><code class="sourceCode roff"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="fu">.rs</span><span class="st">  </span><span class="co">\&quot; Restores normal space mode after using .ns</span></span></code></pre></div></li>
+</ul></li>
+</ul>
+<ol start="141" type="1">
+<li><strong>.rt</strong> - Return from trap.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.rt &lt;tag: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .rt "myTag"  \" Returns from a trap set with this tag</code></li>
+</ul>
+<ol start="142" type="1">
+<li><strong>.schar</strong> - Set special character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.schar &lt;name: string&gt;, &lt;description: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .schar "xS" "\(*S"  \" Defines a special character 'xS' as \(*S</code></li>
+</ul>
+<ol start="143" type="1">
+<li><strong>.shc</strong> - Set soft hyphen character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.shc &lt;character: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .shc "-"  \" Sets the soft hyphen character to '-'</code></li>
+</ul>
+<ol start="144" type="1">
+<li><strong>.shift</strong> - Shift output horizontally.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.shift &lt;amount: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .shift 10  \" Shifts the output 10 units to the right</code></li>
+</ul>
+<ol start="145" type="1">
+<li><strong>.sizes</strong> - Set permissible sizes.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.sizes &lt;list: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .sizes 10,12,14  \" Sets permissible point sizes to 10, 12, and 14</code></li>
+</ul>
+<ol start="146" type="1">
+<li><strong>.so</strong> - Source a file.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.so &lt;file: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .so macros.tmac  \" Includes the contents of 'macros.tmac'</code></li>
+</ul>
+<ol start="147" type="1">
+<li><strong>.soquiet</strong> - Source a file quietly without logging.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.soquiet</code></li>
+<li><strong>Example</strong>: <code>roff      .soquiet  \" Instructs GROFF to source files quietly</code></li>
+</ul>
+<ol start="148" type="1">
+<li><strong>.sp</strong> - Space vertically.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.sp &lt;distance: size?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .sp 1i  \" Adds 1 inch of vertical space</code></li>
+</ul>
+<ol start="149" type="1">
+<li><strong>.special</strong> - Process text as special.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.special &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .special "This text is processed in a special way"</code></li>
+</ul>
+<ol start="150" type="1">
+<li><strong>.spreadwarn</strong> - Set spread warning limit.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.spreadwarn &lt;number: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .spreadwarn 5  \" Sets the warning limit for text spread to 5 units</code></li>
+</ul>
+<ol start="151" type="1">
+<li><strong>.ss</strong> - Set sentence spacing.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ss &lt;space: number&gt;, &lt;stretch?: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ss 12 3  \" Sets sentence spacing to 12 units with an optional stretch of 3 units</code></li>
+</ul>
+<ol start="152" type="1">
+<li><strong>.stringdown</strong> - Convert string to lowercase.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.stringdown &lt;string: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .stringdown "HELLO"  \" Outputs 'hello'</code></li>
+</ul>
+<ol start="153" type="1">
+<li><strong>.stringup</strong> - Convert string to uppercase.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.stringup &lt;string: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .stringup "hello"  \" Outputs 'HELLO'</code></li>
+</ul>
+<ol start="154" type="1">
+<li><strong>.sty</strong> - Set style sheet.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.sty &lt;stylesheet: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .sty "myStyles.tmac"  \" Applies the style sheet 'myStyles.tmac'</code></li>
+</ul>
+<ol start="155" type="1">
+<li><strong>.substring</strong> - Extract substring.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.substring &lt;dest: register&gt;, &lt;src: string&gt;, &lt;start: number&gt;, &lt;length: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ds myStr "Hello, world!"      .substring mySubStr myStr 0 5      .tm "\\*[mySubStr]"  \" Outputs 'Hello'</code></li>
+</ul>
+<ol start="156" type="1">
+<li><strong>.sv</strong> - Save register.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.sv &lt;register: register&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nr counter 100      .sv counter      .nr counter 200</code></li>
+</ul>
+<ol start="157" type="1">
+<li><strong>.sy</strong> - Execute a shell command.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.sy &lt;command: string&gt;</code></li>
+<li><strong>Example</strong>: ```roff .sy ls -l " Executes ‘ls -l’ in the shell and</li>
+</ul>
+<p>displays the output ```</p>
+<ol start="158" type="1">
+<li><strong>.ta</strong> - Set tab stops.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ta &lt;list: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ta 1i 2i 3i  \" Sets tab stops at 1 inch, 2 inches, and 3 inches</code></li>
+</ul>
+<ol start="159" type="1">
+<li><strong>.tag</strong> - Set tag for vertical motion.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tag &lt;name: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tag "SectionStart"</code></li>
+</ul>
+<ol start="160" type="1">
+<li><strong>.taga</strong> - Adjust tag for vertical motion.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.taga &lt;name: string&gt;, &lt;adjustment: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .taga "SectionStart" 5</code></li>
+</ul>
+<ol start="161" type="1">
+<li><strong>.tc</strong> - Translate input character.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tc &lt;character: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tc \*  \" Translates '*' into a specified replacement character</code></li>
+</ul>
+<ol start="162" type="1">
+<li><strong>.ti</strong> - Temporary indent.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ti &lt;indent: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ti 2i  \" Temporarily indents the next line by 2 inches</code></li>
+</ul>
+<ol start="163" type="1">
+<li><strong>.tkf</strong> - Toggle kerning feature.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tkf &lt;feature: string&gt;, &lt;value: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tkf "liga" "off"  \" Turns off ligature feature</code></li>
+</ul>
+<ol start="164" type="1">
+<li><strong>.tl</strong> - Three-part title.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tl &lt;left: string&gt;, &lt;center: string&gt;, &lt;right: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tl 'Left Part' 'Center Part' 'Right Part'</code></li>
+</ul>
+<ol start="165" type="1">
+<li><strong>.tm</strong> - Print to terminal.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tm &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tm "This is a message to the terminal."</code></li>
+</ul>
+<ol start="166" type="1">
+<li><strong>.tm1</strong> - Print to terminal with newline.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tm1 &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tm1 "This message ends with a newline\n"</code></li>
+</ul>
+<ol start="167" type="1">
+<li><strong>.tmc</strong> - Define terminal input macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tmc &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de ReadInput      Read this input: \\$1      ..      .tmc ReadInput</code></li>
+</ul>
+<ol start="168" type="1">
+<li><strong>.tr</strong> - Translate characters.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.tr &lt;old: char&gt;, &lt;new: char&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .tr ab  \" Translates 'a' to 'b'</code></li>
+</ul>
+<ol start="169" type="1">
+<li><strong>.trf</strong> - Translate font.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.trf &lt;font: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .trf Times  \" Translates current font to Times</code></li>
+</ul>
+<ol start="170" type="1">
+<li><strong>.trin</strong> - Set temporary right indent.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.trin &lt;increment: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .trin 1i  \" Sets a temporary right indent of 1 inch</code></li>
+</ul>
+<ol start="171" type="1">
+<li><strong>.trnt</strong> - Set temporary no-trap mode.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.trnt &lt;temporary: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .trnt 1  \" Temporarily disables traps</code></li>
+</ul>
+<ol start="172" type="1">
+<li><strong>.troff</strong> - Switch to troff mode.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.troff</code></li>
+<li><strong>Example</strong>: <code>roff      .troff  \" Switch processing to troff mode</code></li>
+</ul>
+<ol start="173" type="1">
+<li><strong>.uf</strong> - Set underline font.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.uf &lt;font: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .uf 2  \" Sets the font used for underlining to font position 2</code></li>
+</ul>
+<ol start="174" type="1">
+<li><strong>.ul</strong> - Underline text.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.ul &lt;lines: number?&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .ul 3  \" Underlines the next three lines</code></li>
+</ul>
+<ol start="175" type="1">
+<li><strong>.unformat</strong> - Unformat input.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.unformat</code></li>
+<li><strong>Example</strong>: <code>roff      .unformat  \" Turns off all formatting commands</code></li>
+</ul>
+<ol start="176" type="1">
+<li><strong>.vpt</strong> - Validate page top.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.vpt</code></li>
+<li><strong>Example</strong>: <code>roff      .vpt  \" Validates that the page top is correct and adjusts if necessary</code></li>
+</ul>
+<ol start="177" type="1">
+<li><strong>.vs</strong> - Set vertical space.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.vs &lt;space: size&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .vs 12p  \" Sets vertical space to 12 points</code></li>
+</ul>
+<ol start="178" type="1">
+<li><strong>.warn</strong> - Set warning level.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.warn &lt;level: number&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .warn 2  \" Sets the warning level to 2</code></li>
+</ul>
+<ol start="179" type="1">
+<li><strong>.warnscale</strong> - Scale warning output.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: `.</li>
+</ul>
+<p>warnscale &lt;factor: number&gt;` - <strong>Example</strong>: <code>roff      .warnscale 1.5  \" Scales warning messages by a factor of 1.5</code></p>
+<ol start="180" type="1">
+<li><strong>.wh</strong> - Set “when” trap.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.wh &lt;position: number&gt;, &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .wh -1i Footer  \" Sets a trap for the footer 1 inch from the bottom</code></li>
+</ul>
+<ol start="181" type="1">
+<li><strong>.while</strong> - Loop while condition is true.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.while &lt;condition: expression&gt;, &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .nr count 5      .de decrement      .nr count -1      ..      .while gt \\n[count] 0 decrement</code></li>
+</ul>
+<ol start="182" type="1">
+<li><strong>.write</strong> - Write text to a file.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.write &lt;file: string&gt;, &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .open myfile      .write myfile "This text goes into myfile."</code></li>
+</ul>
+<ol start="183" type="1">
+<li><strong>.writec</strong> - Write text to a file with a checksum.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.writec &lt;file: string&gt;, &lt;text: string&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .open myfile      .writec myfile "This text is checksummed."</code></li>
+</ul>
+<ol start="184" type="1">
+<li><strong>.writem</strong> - Write text to a macro.</li>
+</ol>
+<ul>
+<li><strong>Signature</strong>: <code>.writem &lt;macro: macro&gt;</code></li>
+<li><strong>Example</strong>: <code>roff      .de StoreText      Stored text: \\$1      ..      .writem StoreText "Text to be stored."</code></li>
+</ul>
