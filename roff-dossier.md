@@ -30,7 +30,7 @@ So to explain what I mean by saying 'ROFF has charactristics of a markup languag
 
 Yeah, I said it.
 
-So, a 'plain text', as in, the text I am writing now, is a token in ROFF. Its lexical grammar is its syntactic grammar. It's entirely a Type 3 language (regular). You can parse it just with Regex! In fact, we will be writing a ROFF parser in AWK shortly.
+So, a 'plain text', as in, the text I am writing now, is a token in ROFF. Its lexical grammar is its syntactic grammar. It's entirely a Type 3 language (regular).
 
 And then come the requests, and escape sequences.
 
@@ -46,8 +46,12 @@ There are other tokens in ROFF. One is number. Numbers are often suffixed with t
 
 Identifiers are used in macro, register and string names (read about the semantis to learn about them). An identifier does not have a sigil when you define it. But it has several use cases. One is as macro name, which you use just like reqeusts. Another is as register or string names, which you use with escape sequences.
 
-Which means, yes, **YOU CAN PUN IDENTIFIERS IN ROFF!** That is because, there's a shared symbol table for everything. Unless you spin off a new env with '.ev' requests.
+Which means, yes, **YOU CAN PUN IDENTIFIERS IN ROFF!** That is because, there's a shared symbol table for everything. Unless you spin off a new env with '.ev' requests. [See: `examples/punning.roff`]
 
 #### An Example of a ROFF Code
 
-Although there are plenty of examples in the 'example
+Although there are plenty of examples in the the `examples` directoy, I am going to show a basic demonstration of ROFF:
+
+```roff
+
+```
