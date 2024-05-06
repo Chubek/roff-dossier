@@ -1,137 +1,137 @@
-;$;number of arguments passed to the current macro;
-;$$;process ID of the GROFF process;
-;%;last diversion's vertical size;
-;.;current page number;
-;.$;number of arguments in the current macro;
-;.A;current environment;
-;.a;space left on page;
-;.b;always 0, undefined by GROFF;
-;.br;always 0, undefined by GROFF;
-;.c;current line number on the current input file;
-;.C;always 0, undefined by GROFF;
-;.cdp;character depth;
-;.ce;if the last input line was centered;
-;.cht;character height;
-;.color;always 0, undefined by GROFF;
-;.cp;compatibility mode flag;
-;.csk;always 0, undefined by GROFF;
-;.d;depth of the last output line;
-;.ev;current environment number;
-;.F;name of current font;
-;.f;current font number;
-;.fam;name of the current font family;
-;.fn;always 0, undefined by GROFF;
-;.fp;always 0, undefined by GROFF;
-;.g;always 0, undefined by GROFF;
-;.H;current horizontal line position;
-;.h;current vertical line position;
-;.height;always 0, undefined by GROFF;
-;.hla;hyphenation language;
-;.hlc;always 0, undefined by GROFF;
-;.hlm;hyphenation limit;
-;.hy;hyphenation flag;
-;.hym;hyphenation margin;
-;.hys;hyphenation space;
-;.i;current indentation;
-;.in;current indent amount;
-;.int;always 0, undefined by GROFF;
-;.j;current adjustment mode;
-;.k;always 0, undefined by GROFF;
-;.kern;kerning flag;
-;.L;line number in current macro;
-;.l;line length;
-;.lg;ligature mode;
-;.linetabs;always 0, undefined by GROFF;
-;.ll;line length;
-;.lt;title length;
-;.m;current macro name;
-;.M;always 0, undefined by GROFF;
-;.n;always 0, undefined by GROFF;
-;.ne;needed space amount;
-;.nm;number mode flag;
-;.nn;number of lines with no numbering;
-;.ns;no-space mode flag;
-;.o;current page offset;
-;.O;always 0, undefined by GROFF;
-;.P;always 0, undefined by GROFF;
-;.p;current page length;
-;.pe;always 0, undefined by GROFF;
-;.pn;next page number;
-;.ps;point size;
-;.psr;always 0, undefined by GROFF;
-;.pvs;provisional vertical spacing;
-;.R;always 0, undefined by GROFF;
-;.rj;always 0, undefined by GROFF;
-;.s;point size;
-;.slant;font slant;
-;.sr;always 0, undefined by GROFF;
-;.ss;space size;
-;.sss;always 0, undefined by GROFF;
-;.sty;always 0, undefined by GROFF;
-;.T;troff compatibility flag;
-;.t;always 0, undefined by GROFF;
-;.tabs;tab settings;
-;.trunc;truncate flag;
-;.U;always 0, undefined by GROFF;
-;.u;underline position;
-;.V;always 0, undefined by GROFF;
-;.v;vertical resolution;
-;.vpt;validate page top;
-;.w;width of last line;
-;.warn;warning level;
-;.x;horizontal resolution;
-;.y;always 0, undefined by GROFF;
-;.Y;always 0, undefined by GROFF;
-;.z;always 0, undefined by GROFF;
-;.zoom;zoom factor;
-;.C;always 0, undefined by GROFF;
-;c.;always 0, undefined by GROFF;
-;ct;center tab;
-;D;always 0, undefined by GROFF;
-;dl;always 0, undefined by GROFF;
-;dn;always 0, undefined by GROFF;
-;dw;always 0, undefined by GROFF;
-;dy;always 0, undefined by GROFF;
-;F;file name;
-;G;always 0, undefined by GROFF;
-;H;always 0, undefined by GROFF;
-;hours;system hours;
-;hp;always 0, undefined by GROFF;
-;L;always 0, undefined by GROFF;
-;llx;lower left x-coordinate;
-;lly;lower left y-coordinate;
-;ln;line number;
-;lsn;always 0, undefined by GROFF;
-;lss;line space size;
-;M;always 0, undefined by GROFF;
-;minutes;system minutes;
-;mo;always 0, undefined by GROFF;
-;N;always 0, undefined by GROFF;
-;nl;newline;
-;O;always 0, undefined by GROFF;
-;opmaxx;output page maximum x-coordinate;
-;opmaxy;output page maximum y-coordinate;
-;opminx;output page minimum x-coordinate;
-;opminy;output page minimum y-coordinate;
-;P;always 0, undefined by GROFF;
-;Q;always 0, undefined by GROFF;
-;R;always 0, undefined by GROFF;
-;rsb;always 0, undefined by GROFF;
-;rst;always 0, undefined by GROFF;
-;S;always 0, undefined by GROFF;
-;sb;always 0, undefined by GROFF;
-;seconds;system seconds;
-;skw;always 0, undefined by GROFF;
-;slimit;always 0, undefined by GROFF;
-;ssc;always 0, undefined by GROFF;
-;st;always 0, undefined by GROFF;
-;systat;always 0, undefined by GROFF;
-;T;always 0, undefined by GROFF;
-;U;always 0, undefined by GROFF;
-;urx;upper right x-coordinate;
-;ury;upper right y-coordinate;
-;V;always 0, undefined by GROFF;
-;Y;always 0, undefined by GROFF;
-;year;system year;
-;yr;always 0, undefined by GROFF;
+$,number of arguments passed to the current macro,
+$$,process ID of the GROFF process,
+%,last diversion's vertical size,
+.,current page number,
+.$,number of arguments in the current macro,
+.A,current environment,
+.a,space left on page,
+.b,always 0%cundefined by GROFF,
+.br,always 0%cundefined by GROFF,
+.c,current line number on the current input file,
+.C,always 0%cundefined by GROFF,
+.cdp,character depth,
+.ce,if the last input line was centered,
+.cht,character height,
+.color,always 0%cundefined by GROFF,
+.cp,compatibility mode flag,
+.csk,always 0%cundefined by GROFF,
+.d,depth of the last output line,
+.ev,current environment number,
+.F,name of current font,
+.f,current font number,
+.fam,name of the current font family,
+.fn,always 0%cundefined by GROFF,
+.fp,always 0%cundefined by GROFF,
+.g,always 0%cundefined by GROFF,
+.H,current horizontal line position,
+.h,current vertical line position,
+.height,always 0%cundefined by GROFF,
+.hla,hyphenation language,
+.hlc,always 0%cundefined by GROFF,
+.hlm,hyphenation limit,
+.hy,hyphenation flag,
+.hym,hyphenation margin,
+.hys,hyphenation space,
+.i,current indentation,
+.in,current indent amount,
+.int,always 0%cundefined by GROFF,
+.j,current adjustment mode,
+.k,always 0%cundefined by GROFF,
+.kern,kerning flag,
+.L,line number in current macro,
+.l,line length,
+.lg,ligature mode,
+.linetabs,always 0%cundefined by GROFF,
+.ll,line length,
+.lt,title length,
+.m,current macro name,
+.M,always 0%cundefined by GROFF,
+.n,always 0%cundefined by GROFF,
+.ne,needed space amount,
+.nm,number mode flag,
+.nn,number of lines with no numbering,
+.ns,no-space mode flag,
+.o,current page offset,
+.O,always 0%cundefined by GROFF,
+.P,always 0%cundefined by GROFF,
+.p,current page length,
+.pe,always 0%cundefined by GROFF,
+.pn,next page number,
+.ps,point size,
+.psr,always 0%cundefined by GROFF,
+.pvs,provisional vertical spacing,
+.R,always 0%cundefined by GROFF,
+.rj,always 0%cundefined by GROFF,
+.s,point size,
+.slant,font slant,
+.sr,always 0%cundefined by GROFF,
+.ss,space size,
+.sss,always 0%cundefined by GROFF,
+.sty,always 0%cundefined by GROFF,
+.T,troff compatibility flag,
+.t,always 0%cundefined by GROFF,
+.tabs,tab settings,
+.trunc,truncate flag,
+.U,always 0%cundefined by GROFF,
+.u,underline position,
+.V,always 0%cundefined by GROFF,
+.v,vertical resolution,
+.vpt,validate page top,
+.w,width of last line,
+.warn,warning level,
+.x,horizontal resolution,
+.y,always 0%cundefined by GROFF,
+.Y,always 0%cundefined by GROFF,
+.z,always 0%cundefined by GROFF,
+.zoom,zoom factor,
+.C,always 0%cundefined by GROFF,
+c.,always 0%cundefined by GROFF,
+ct,center tab,
+D,always 0%cundefined by GROFF,
+dl,always 0%cundefined by GROFF,
+dn,always 0%cundefined by GROFF,
+dw,always 0%cundefined by GROFF,
+dy,always 0%cundefined by GROFF,
+F,file name,
+G,always 0%cundefined by GROFF,
+H,always 0%cundefined by GROFF,
+hours,system hours,
+hp,always 0%cundefined by GROFF,
+L,always 0%cundefined by GROFF,
+llx,lower left x-coordinate,
+lly,lower left y-coordinate,
+ln,line number,
+lsn,always 0%cundefined by GROFF,
+lss,line space size,
+M,always 0%cundefined by GROFF,
+minutes,system minutes,
+mo,always 0%cundefined by GROFF,
+N,always 0%cundefined by GROFF,
+nl,newline,
+O,always 0%cundefined by GROFF,
+opmaxx,output page maximum x-coordinate,
+opmaxy,output page maximum y-coordinate,
+opminx,output page minimum x-coordinate,
+opminy,output page minimum y-coordinate,
+P,always 0%cundefined by GROFF,
+Q,always 0%cundefined by GROFF,
+R,always 0%cundefined by GROFF,
+rsb,always 0%cundefined by GROFF,
+rst,always 0%cundefined by GROFF,
+S,always 0%cundefined by GROFF,
+sb,always 0%cundefined by GROFF,
+seconds,system seconds,
+skw,always 0%cundefined by GROFF,
+slimit,always 0%cundefined by GROFF,
+ssc,always 0%cundefined by GROFF,
+st,always 0%cundefined by GROFF,
+systat,always 0%cundefined by GROFF,
+T,always 0%cundefined by GROFF,
+U,always 0%cundefined by GROFF,
+urx,upper right x-coordinate,
+ury,upper right y-coordinate,
+V,always 0%cundefined by GROFF,
+Y,always 0%cundefined by GROFF,
+year,system year,
+yr,always 0%cundefined by GROFF,
  
