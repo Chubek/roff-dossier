@@ -1,0 +1,78 @@
+\\          <None>                         { print a backslash }
+\\          <None>                         { line break, equivalent to '.br' }
+\\!         <None>                         { ignore rest of input line }
+\\"         <None>                         { begin a comment until end of line }
+\\#         <None>                         { comment character within a line }
+\\$         <Index: Number>                { refer to nth argument in a macro }
+\\$*        <None>                         { refer to all arguments as a single string }
+\\$0        <None>                         { refer to macro name itself }
+\\$@        <None>                         { refer to all arguments individually }
+\\$^        <None>                         { refer to all arguments, each quoted individually }
+\\%         <None>                         { reserved for future use }
+\\&         <None>                         { zero-width space }
+\\'         <None>                         { zero-width line break }
+\\(xx       <Chars: String>                { special character, digraph form }
+\\)         <None>                         { end a macro argument group }
+\\*         <Name: String>                 { interpolate a string }
+\\,         <None>                         { kern by a small space amount }
+\\-         <None>                         { discretionary hyphen }
+\\.         <None>                         { leader dots }
+\\/         <None>                         { italic correction }
+\\0         <None>                         { escape to the output device's character set }
+\\          <None>                         { print a space }
+\\?         <None>                         { non-breaking space }
+\\A         <None>                         { mark location in an environment }
+\\a         <None>                         { mark horizontal place }
+\\B         <None>                         { begin a word boundary }
+\\b         <Macro: String>                { backward branch to a macro }
+\\c         <None>                         { continue input line }
+\\C'xx'     <Name: String>                 { print a special character }
+\\d         <None>                         { move down half a line }
+\\D'xx yy'  <DrawCmd: String, Args: List>  { draw function }
+\\e         <None>                         { print current escape character }
+\\E         <None>                         { synonym for \\e }
+\\f         <Font: String>                 { change font }
+\\F         <File: String>                 { embed external file }
+\\g         <None>                         { groff-specific control, varies }
+\\H         <Size: Number>                 { set character height }
+\\h'xx'     <Distance: Size>               { horizontal motion }
+\\k         <Register: Register>           { mark horizontal place in register }
+\\l'xx'     <Length: Size>                 { draw horizontal line }
+\\L         <None>                         { begin a left-to-right environment }
+\\m         <Color: String>                { change color }
+\\M         <Macro: String>                { call macro }
+\\n'xx'     <Register: Register>           { print the value of a number register }
+\\n(xx      <Increment: Number?>           { print/increment a number register }
+\\N'xx'     <Code: Number>                 { print a character by code }
+\\newline   <None>                         { equivalent to '.br' }
+\\o'xx'     <Chars: String>                { overstrike characters }
+\\O         <None>                         { open a local diversion }
+\\p         <None>                         { pause for input }
+\\R         <None>                         { reverse line feed }
+\\R'xx'     <None>                         { conditional return }
+\\r         <None>                         { carriage return }
+\\RET       <None>                         { hard return }
+\\S         <None>                         { superimpose previous and next characters }
+\\s         <Size: Number>                 { change point size }
+\\SP        <None>                         { synonym for \\ }
+\\space     <None>                         { insert a space }
+\\t         <None>                         { horizontal tab }
+\\u         <None>                         { move up half a line }
+\\v'xx'     <Distance: Size>               { vertical motion }
+\\V         <None>                         { validate vertical position }
+\\w'xx'     <Text: String>                 { return width of string }
+\\x'xx'     <Adjustment: Number>           { extra vertical space }
+\\X'xx'     <Special: String>              { embed external data }
+\\Y         <None>                         { groff-specific control, varies }
+\\z'xx'     <Char: Char>                   { print character without space }
+\\Z'xx'     <Text: String>                 { print string underlined }
+\\[name]    <Name: String>                 { special character by name }
+\\\\         <None>                         { print a backslash }
+\\^         <None>                         { raise text by half a line }
+\\_         <None>                         { underline next character }
+\\`         <None>                         { left single quote }
+\\{         <None>                         { begin a no-space mode group }
+\\}         <None>                         { end a no-space mode group }
+\\|         <None>                         { zero-width space }
+\\~         <None>                         { non-breaking space }
+
