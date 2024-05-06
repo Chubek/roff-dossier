@@ -1,162 +1,137 @@
-$           <None>                        { number of arguments passed to the current macro }
-$$          <None>                        { process ID of the GROFF process }
-%           <None>                        { last diversion's vertical size }
-.           <None>                        { current page number }
-.$          <None>                        { number of arguments in the current macro }
-.A          <None>                        { current environment }
-.a          <None>                        { space left on page }
-.b          <None>                        { always 0, undefined by GROFF }
-.br         <None>                        { always 0, undefined by GROFF }
-.c          <None>                        { current line number on the current input file }
-.C          <None>                        { always 0, undefined by GROFF }
-.cdp        <None>                        { character depth }
-.ce         <None>                        { if the last input line was centered }
-.cht        <None>                        { character height }
-.color      <None>                        { always 0, undefined by GROFF }
-.cp         <None>                        { compatibility mode flag }
-.csk        <None>                        { always 0, undefined by GROFF }
-.d          <None>                        { depth of the last output line }
-.ev         <None>                        { current environment number }
-.F          <None>                        { name of current font }
-.f          <None>                        { current font number }
-.fam        <None>                        { name of the current font family }
-.fn         <None>                        { always 0, undefined by GROFF }
-.fp         <None>                        { always 0, undefined by GROFF }
-.g          <None>                        { always 0, undefined by GROFF }
-.H          <None>                        { current horizontal line position }
-.h          <None>                        { current vertical line position }
-.height     <None>                        { always 0, undefined by GROFF }
-.hla        <None>                        { hyphenation language }
-.hlc        <None>                        { always 0, undefined by GROFF }
-.hlm        <None>                        { hyphenation limit }
-.hy         <None>                        { hyphenation flag }
-.hym        <None>                        { hyphenation margin }
-.hys        <None>                        { hyphenation space }
-.i          <None>                        { current indentation }
-.in         <None>                        { current indent amount }
-.int        <None>                        { always 0, undefined by GROFF }
-.j          <None>                        { current adjustment mode }
-.k          <None>                        { always 0, undefined by GROFF }
-.kern       <None>                        { kerning flag }
-.L          <None>                        { line number in current macro }
-.l          <None>                        { line length }
-.lg         <None>                        { ligature mode }
-.linetabs   <None>                        { always 0, undefined by GROFF }
-.ll         <None>                        { line length }
-.lt         <None>                        { title length }
-.m          <None>                        { current macro name }
-.M          <None>                        { always 0, undefined by GROFF }
-.n          <None>                        { always 0, undefined by GROFF }
-.ne         <None>                        { needed space amount }
-.nm         <None>                        { number mode flag }
-.nn         <None>                        { number of lines with no numbering }
-.ns         <None>                        { no-space mode flag }
-.o          <None>                        { current page offset }
-.O          <None>                        { always 0, undefined by GROFF }
-.P          <None>                        { always 0, undefined by GROFF }
-.p          <None>                        { current page length }
-.pe         <None>                       { always 0, undefined by GROFF }
-.pn         <None>                        { next page number }
-.ps         <None>                        { point size }
-.psr        <None>                        { always 0, undefined by GROFF }
-.pvs        <None>                        { provisional vertical spacing }
-.R          <None>                        { always 0, undefined by GROFF }
-.rj         <None>                        { always 0, undefined by GROFF }
-.s          <None>                        { point size }
-.slant      <None>                        { font slant }
-.sr         <None>                        { always 0, undefined by GROFF }
-.ss         <None>                        { space size }
-.sss        <None>                        { always 0, undefined by GROFF }
-.sty        <None>                        { always 0, undefined by GROFF }
-.T          <None>                        { troff compatibility flag }
-.t          <None>                        { always 0, undefined by GROFF }
-.tabs       <None>                        { tab settings }
-.trunc      <None>                        { truncate flag }
-.U          <None>                        { always 0, undefined by GROFF }
-.u          <None>                        { underline position }
-.V          <None>                        { always 0, undefined by GROFF }
-.v          <None>                        { vertical resolution }
-.vpt        <None>                        { validate page top }
-.w          <None>                        { width of last line }
-.warn       <None>                        { warning level }
-.x          <None>                        { horizontal resolution }
-.y          <None>                        { always 0, undefined by GROFF }
-.Y          <None>                        { always 0, undefined by GROFF }
-.z          <None>                        { always 0, undefined by GROFF }
-.zoom       <None>                        { zoom factor }
-.C          <None>                        { always 0, undefined by GROFF }
-c.          <None>                        { always 0, undefined by GROFF }
-ct          <None>                        { center tab }
-D           <None>                        { always 0, undefined by GROFF }
-DD[ms]      <None>                        { date day in ms format }
-DI[ms]      <None>                        { date month in ms format }
-dl          <None>                        { always 0, undefined by GROFF }
-dn          <None>                        { always 0, undefined by GROFF }
-dw          <None>                        { always 0, undefined by GROFF }
-dy          <None>                        { always 0, undefined by GROFF }
-F           <None>                        { file name }
-FF[ms]      <None>                        { form feed in ms format }
-FI[ms]      <None>                        { form indent in ms format }
-FM[ms]      <None>                        { form margin in ms format }
-FPD[ms]     <None>                        { form page depth in ms format }
-FPS[ms]     <None>                        { form page size in ms format }
-FVS[ms]     <None>                        { form vertical spacing in ms format }
-G           <None>                        { always 0, undefined by GROFF }
-GROWPS[ms]  <None>                        { grow point size in ms format }
-GS[ms]      <None>                        { grow space in ms format }
-H           <None>                        { always 0, undefined by GROFF }
-HM[ms]      <None>                        { horizontal margin in ms format }
-HORPHANS[ms]<None>                        { handle orphans in ms format }
-hours       <None>                        { system hours }
-hp          <None>                        { always 0, undefined by GROFF }
-HY[ms]      <None>                        { hyphenation in ms format }
-L           <None>                        { always 0, undefined by GROFF }
-LL[ms]      <None>                        { line length in ms format }
-llx         <None>                        { lower left x-coordinate }
-lly         <None>                        { lower left y-coordinate }
-ln          <None>                        { line number }
-lsn         <None>                        { always 0, undefined by GROFF }
-lss         <None>                        { line space size }
-LT[ms]      <None>                        { line type in ms format }
-M           <None>                        { always 0, undefined by GROFF }
-MINGW[ms]   <None>                        { minimum grow width in ms format }
-minutes     <None>                        { system minutes }
-mo          <None>                        { always 0, undefined by GROFF }
-N           <None>                        { always 0, undefined by GROFF }
-nl          <None>                        { newline }
-O           <None>                        { always 0, undefined by GROFF }
-opmaxx      <None>                        { output page maximum x-coordinate }
-opmaxy      <None>                        { output page maximum y-coordinate }
-opminx      <None>                        { output page minimum x-coordinate }
-opminy      <None>                        { output page minimum y-coordinate }
-P           <None>                        { always 0, undefined by GROFF }
-PD[ms]      <None>                        { page depth in ms format }
-PI[ms]      <None>                        { page indent in ms format }
-PO[ms]      <None>                        { page offset in ms format }
-PORPHANS[ms]<None>                        { prevent orphans in ms format }
-PS[ms]      <None>                        { point size in ms format }
-PSINCR[ms]  <None>                        { point size increment in ms format }
-Q           <None>                        { always 0, undefined by GROFF }
-QI[ms]      <None>                        { quote indent in ms format }
-R           <None>                        { always 0, undefined by GROFF }
-rsb         <None>                        { always 0, undefined by GROFF }
-rst         <None>                        { always 0, undefined by GROFF }
-S           <None>                        { always 0, undefined by GROFF }
-sb          <None>                        { always 0, undefined by GROFF }
-seconds     <None>                        { system seconds }
-skw         <None>                        { always 0, undefined by GROFF }
-slimit      <None>                        { always 0, undefined by GROFF }
-ssc         <None>                        { always 0, undefined by GROFF }
-st          <None>                        { always 0, undefined by GROFF }
-systat      <None>                        { always 0, undefined by GROFF }
-T           <None>                        { always 0, undefined by GROFF }
-TC-MARGIN[ms]<None>                       { tab character margin in ms format }
-U           <None>                        { always 0, undefined by GROFF }
-urx         <None>                        { upper right x-coordinate }
-ury         <None>                        { upper right y-coordinate }
-V           <None>                        { always 0, undefined by GROFF }
-S[ms]       <None>                        { section in ms format }
-Y           <None>                        { always 0, undefined by GROFF }
-year        <None>                        { system year }
-yr          <None>                        { always 0, undefined by GROFF }
+$                { number of arguments passed to the current macro }
+$$               { process ID of the GROFF process }
+%                { last diversion's vertical size }
+.                { current page number }
+.$               { number of arguments in the current macro }
+.A               { current environment }
+.a               { space left on page }
+.b               { always 0, undefined by GROFF }
+.br              { always 0, undefined by GROFF }
+.c               { current line number on the current input file }
+.C               { always 0, undefined by GROFF }
+.cdp             { character depth }
+.ce              { if the last input line was centered }
+.cht             { character height }
+.color           { always 0, undefined by GROFF }
+.cp              { compatibility mode flag }
+.csk             { always 0, undefined by GROFF }
+.d               { depth of the last output line }
+.ev              { current environment number }
+.F               { name of current font }
+.f               { current font number }
+.fam             { name of the current font family }
+.fn              { always 0, undefined by GROFF }
+.fp              { always 0, undefined by GROFF }
+.g               { always 0, undefined by GROFF }
+.H               { current horizontal line position }
+.h               { current vertical line position }
+.height          { always 0, undefined by GROFF }
+.hla             { hyphenation language }
+.hlc             { always 0, undefined by GROFF }
+.hlm             { hyphenation limit }
+.hy              { hyphenation flag }
+.hym             { hyphenation margin }
+.hys             { hyphenation space }
+.i               { current indentation }
+.in              { current indent amount }
+.int             { always 0, undefined by GROFF }
+.j               { current adjustment mode }
+.k               { always 0, undefined by GROFF }
+.kern            { kerning flag }
+.L               { line number in current macro }
+.l               { line length }
+.lg              { ligature mode }
+.linetabs        { always 0, undefined by GROFF }
+.ll              { line length }
+.lt              { title length }
+.m               { current macro name }
+.M               { always 0, undefined by GROFF }
+.n               { always 0, undefined by GROFF }
+.ne              { needed space amount }
+.nm              { number mode flag }
+.nn              { number of lines with no numbering }
+.ns              { no-space mode flag }
+.o               { current page offset }
+.O               { always 0, undefined by GROFF }
+.P               { always 0, undefined by GROFF }
+.p               { current page length }
+.pe             { always 0, undefined by GROFF }
+.pn              { next page number }
+.ps              { point size }
+.psr             { always 0, undefined by GROFF }
+.pvs             { provisional vertical spacing }
+.R               { always 0, undefined by GROFF }
+.rj              { always 0, undefined by GROFF }
+.s               { point size }
+.slant           { font slant }
+.sr              { always 0, undefined by GROFF }
+.ss              { space size }
+.sss             { always 0, undefined by GROFF }
+.sty             { always 0, undefined by GROFF }
+.T               { troff compatibility flag }
+.t               { always 0, undefined by GROFF }
+.tabs            { tab settings }
+.trunc           { truncate flag }
+.U               { always 0, undefined by GROFF }
+.u               { underline position }
+.V               { always 0, undefined by GROFF }
+.v               { vertical resolution }
+.vpt             { validate page top }
+.w               { width of last line }
+.warn            { warning level }
+.x               { horizontal resolution }
+.y               { always 0, undefined by GROFF }
+.Y               { always 0, undefined by GROFF }
+.z               { always 0, undefined by GROFF }
+.zoom            { zoom factor }
+.C               { always 0, undefined by GROFF }
+c.               { always 0, undefined by GROFF }
+ct               { center tab }
+D                { always 0, undefined by GROFF }
+dl               { always 0, undefined by GROFF }
+dn               { always 0, undefined by GROFF }
+dw               { always 0, undefined by GROFF }
+dy               { always 0, undefined by GROFF }
+F                { file name }
+G                { always 0, undefined by GROFF }
+H                { always 0, undefined by GROFF }
+hours            { system hours }
+hp               { always 0, undefined by GROFF }
+L                { always 0, undefined by GROFF }
+llx              { lower left x-coordinate }
+lly              { lower left y-coordinate }
+ln               { line number }
+lsn              { always 0, undefined by GROFF }
+lss              { line space size }
+M                { always 0, undefined by GROFF }
+minutes          { system minutes }
+mo               { always 0, undefined by GROFF }
+N                { always 0, undefined by GROFF }
+nl               { newline }
+O                { always 0, undefined by GROFF }
+opmaxx           { output page maximum x-coordinate }
+opmaxy           { output page maximum y-coordinate }
+opminx           { output page minimum x-coordinate }
+opminy           { output page minimum y-coordinate }
+P                { always 0, undefined by GROFF }
+Q                { always 0, undefined by GROFF }
+R                { always 0, undefined by GROFF }
+rsb              { always 0, undefined by GROFF }
+rst              { always 0, undefined by GROFF }
+S                { always 0, undefined by GROFF }
+sb               { always 0, undefined by GROFF }
+seconds          { system seconds }
+skw              { always 0, undefined by GROFF }
+slimit           { always 0, undefined by GROFF }
+ssc              { always 0, undefined by GROFF }
+st               { always 0, undefined by GROFF }
+systat           { always 0, undefined by GROFF }
+T                { always 0, undefined by GROFF }
+U                { always 0, undefined by GROFF }
+urx              { upper right x-coordinate }
+ury              { upper right y-coordinate }
+V                { always 0, undefined by GROFF }
+Y                { always 0, undefined by GROFF }
+year             { system year }
+yr               { always 0, undefined by GROFF }
  
