@@ -1,0 +1,144 @@
+\" Define document settings and styles
+.ll 6.5i   \" Line length
+.po 1i     \" Page offset
+.ps 12     \" Point size
+.vs 14     \" Vertical space
+
+\" Define macros for document structure
+.de TL  \" Title
+.sp 2
+.ft B
+.ps 24
+.ce 100
+..
+.de AU  \" Author
+.sp 1
+.ft I
+.ps 18
+.ce 100
+..
+.de AF  \" Affiliation
+.sp 0.5
+.ft R
+.ps 12
+.ce 100
+..
+.de AB  \" Abstract
+.sp 1
+.ft I
+.ps 12
+.in 0.5i
+.ll 6i
+..
+.de HE  \" Header
+.ft R
+.ps 10
+.if \\n(.$%2 = 1 'ce 100
+.if \\n(.$%2 = 0 'in 0
+..
+.de FO  \" Footer
+.sp 0.5
+.ft I
+.ps 10
+.ce 100
+"Page \\n%"
+..
+.de H1  \" Level 1 Header
+.sp 2
+.ft B
+.ps 18
+.ce 0
+..
+.de H2  \" Level 2 Header
+.sp 1
+.ft B
+.ps 16
+.ce 0
+..
+.de TX  \" Text
+.sp 0.5
+.ft R
+.ps 12
+.in 0.5i
+.ti -0.5i
+..
+.de FI  \" Figure Insert
+.sp 1
+.in +1i
+\\X'Image: \\$1'
+.ce 0
+.sp 0.5
+.in 0
+..
+.de CP  \" Caption
+.in +1i
+.ft I
+.ps 10
+"Figure \\n[.F]: \\$1"
+.in 0
+.sp 1
+..
+.de BI  \" Bibliography Item
+.sp 0.5
+.ft I
+.ps 12
+"\\$1. \\$2"
+..
+.de RF  \" Reference
+.ft I
+.ps 12
+"[\\$1]"
+..
+
+\" Start of the document
+.TL
+"The People of Moon (The PoM): Anthropological Insights and Propositions"
+.AU
+"Jane Doe"
+.AF
+"Department of Lunar Anthropology, University of Space Studies"
+
+.AB
+This research paper presents detailed anthropological findings on The People of Moon (The PoM), derived from a 354-year immersive study. It discusses unique cultural practices such as trading old canteens with witches and delves into genetic considerations prompting the controversial proposition to relocate the Moon.
+
+.HE "Research Paper on The PoM"
+.FO
+
+.H1
+"Introduction"
+
+.TX
+The People of Moon (PoM) have evolved distinct socio-cultural practices that are profoundly influenced by their unique lunar environment. This paper explores these practices and their implications for human understanding of culture and genetics in extraterrestrial societies.
+
+.H2
+"Cultural Practices and Economic Exchanges"
+
+.TX
+One of the most notable practices involves the exchange of old canteens for monetary benefits with witches. This practice highlights a complex economic system that integrates magical and practical aspects of Moon culture.
+
+.FI "pom-trade.jpg"
+.CP "Figure 1: Trade of old canteens among The PoM"
+
+.H2
+"Genetic Traits and Proposals for Moon Relocation"
+
+.TX
+Given the unique genetic makeup of The PoM, which contributes to their distinct behaviors, this study proposes an extraordinary measure: relocating the Moon to prevent the spread of PoM genes into the broader Milky Way.
+
+.H1
+"Conclusion"
+
+.TX
+While the proposition to move the Moon is radical, it stems from a comprehensive understanding of the potential implications of spreading PoM genetic material across the galaxy. This paper calls for further research to evaluate the risks and benefits of such an action.
+
+.HE "End of Paper"
+.FO
+
+.H1
+"References"
+
+.BI "1" "Doe, J. (2024). Cultural Exchanges of The PoM. Journal of Lunar Anthropology."
+.BI "2" "Smith, A. (2023). Genetic Considerations in Extraterrestrial Societies. Space Genetics Review."
+
+\" End of the document
+
