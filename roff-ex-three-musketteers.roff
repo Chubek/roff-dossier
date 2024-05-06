@@ -1,0 +1,36 @@
+.\" Start of GROFF document
+.ll 6i
+.ps 12
+.vs 14
+
+.\" Define a diversion buffer
+.di divertText
+
+.\" First paragraph stored in diversion
+The first thirty lines of "The Three Musketeers" begins with an introduction to the era and the situation surrounding the characters. It's a gripping start that sets the stage for adventure and intrigue.
+
+.\" End the diversion
+.di
+
+.\" Use the content of the diversion later in the document
+.br
+.nf
+.ps 10
+.ft I
+.sp 2
+.\" Output the content of the diversion
+.do divertText
+.ft R
+.ps 12
+.fi
+
+.\" Continue with the main document
+.sp 2
+The story of "The Three Musketeers" is set in the 17th century; it narrates the adventures of a young man named d'Artagnan after he leaves home to travel to Paris, hoping to join the Musketeers of the Guard. Although d'Artagnan is not able to join this elite corps immediately, he befriends three of the most formidable musketeers of the age—Athos, Porthos, and Aramis—and gets involved in affairs of the state and court.
+
+.sp 2
+The narrative style Dumas employed in "The Three Musketeers" combines historical events with fiction in a way that has captivated generations of readers. As d'Artagnan and his friends work to thwart the schemes of Cardinal Richelieu and protect the Queen, the lines between heroism, duty, sacrifice, and camaraderie are explored.
+
+.\" End the document
+.br
+
