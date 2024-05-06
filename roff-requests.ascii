@@ -1,0 +1,185 @@
+.ab          <None>                                           { abort with message }
+.ad          <Mode: Enum>                                     { adjust lines: 'l'eft, 'r'ight, 'c'enter, 'b'oth, 'n'one }
+.af          <Dest: Register, Src: Format>                    { assign format to a number register }
+.aln         <New: Register, Old: Register>                   { alias name for a number register }
+.als         <New: Macro/String, Old: Macro/String>           { alias name for a string or macro }
+.am          <Name: Macro>                                    { append to a macro }
+.am1         <Name: Macro>                                    { append to a macro, adding a newline at the end }
+.ami         <Name: Macro>                                    { append to a macro with an indent }
+.ami1        <Name: Macro>                                    { append to a macro with an indent and add a newline at the end }
+.as          <Register: String, Text: String>                 { append to a string register }
+.as1         <Register: String, Text: String>                 { append to a string register, adding a newline at the end }
+.asciify     <Text: String>                                   { convert a string to ASCII }
+.backtrace   <None>                                           { print stack trace of macros and diversions }
+.bd          <Font: String, Space: Number>                    { embolden a font by overstriking }
+.blm         <Macro: Macro>                                   { set the macro to invoke at the bottom of the page }
+.box         <Height: Number, Width: Number>                  { draw a box }
+.bp          <Page: Number?>                                  { begin a new page }
+.br          <None>                                           { insert a line break }
+.break       <None>                                           { synonym for .br }
+.brp         <None>                                           { break and output a page }
+.c2          <Character: Char>                                { change nobreak control character }
+.cc          <Character: Char>                                { change control character }
+.ce          <Lines: Number?>                                 { center text }
+.cf          <Filename: String>                               { copy file to output }
+.cflags      <Flag: Number>                                   { set character flags }
+.ch          <Macro: Macro, Position: Number>                 { schedule macro for execution at a position }
+.char        <Name: String, Description: String>              { define a character }
+.chop        <Register: Register, Length: Number>             { chop characters from a string register }
+.class       <Class: Number, Members: String>                 { define a character class }
+.close       <File: String>                                   { close a previously opened file }
+.color       <Color: String>                                  { set output color }
+.composite   <Dest: Register, Src: Register>                  { composite two characters }
+.continue    <None>                                           { continue interrupted text }
+.cp          <Percentage: Number>                             { compatibility mode percentage }
+.cs          <Font: String, Space: Number, Stretch: Number>   { constant space width }
+.cu          <Lines: Number?>                                 { underline text }
+.da          <Register: Register?>                            { define a diversion (append mode) }
+.de          <Macro: Macro>                                   { define or redefine a macro }
+.de1         <Macro: Macro>                                   { define a macro, adding a newline at the end }
+.defcolor    <Name: String, Model: String, Components: String>{ define a color }
+.dei         <Macro: Macro>                                   { define an indirect macro }
+.dei1        <Macro: Macro>                                   { define an indirect macro with newline }
+.device      <Name: String>                                   { specify output device }
+.devicem     <Name: String>                                   { specify output device mode }
+.di          <Register: Register?>                            { divert output to a register }
+.do          <String: String>                                 { execute a diversions }
+.ds          <Name: String, Content: String>                  { define or redefine a string }
+.ds1         <Name: String, Content: String>                  { define a string with a newline at the end }
+.dt          <Tabset: String>                                 { set tab stops dynamically }
+.ec          <Character: Char>                                { end of change character }
+.ecr         <None>                                           { reset escape character }
+.ecs         <None>                                           { save current escape character }
+.el          <None>                                           { else part of if-else condition }
+.em          <Macro: Macro>                                   { set end of input trap macro }
+.eo          <None>                                           { turn off escape mechanism }
+.ev          <Environment: Number>                            { switch environment }
+.evc         <Environment: Number>                            { switch environment conditionally }
+.ex          <None>                                           { exit from groff }
+.fam         <Family: String>                                 { set font family }
+.fc          <Char: Char, Char: Char?>                        { set field delimiters }
+.fchar       <Name: String, Description: String>              { define a fallback character }
+.fcolor      <Color: String>                                  { set fill color }
+.fi          <None>                                           { fill text }
+.fl          <None>                                           { flush output }
+.fp          <Font: Number, Name: String>                     { mount font }
+.fschar      <Name: String, Description: String>              { define a fallback space character }
+.fspecial    <Name: String>                                   { designate a special font }
+.ft          <Font: String?>                                  { set font }
+.ftr         <Original: String, Replacement: String>          { translate font }
+.fzoom       <Font: String, X-Mag: Number, Y-Mag: Number>     { zoom a font }
+.gcolor      <Color: String>                                  { set glyph color }
+.hc          <Char: Char>                                     { set hyphenation character }
+.hcode       <Code: String>                                   { set hyphenation code }
+.hla         <Language: String>                               { set hyphenation language }
+.hlm         <Limit: Number>                                  { set hyphenation limit }
+.hpf         <Pattern: String>                                { set hyphenation pattern file }
+.hpfa        <Pattern: String>                                { append to hyphenation pattern file }
+.hpfcode     <Code: String>                                   { set hyphenation pattern code }
+.hw          <Word: String>                                   { add hyphenation exception word }
+.hy          <Switch: Number?>                                { set hyphenation }
+.hym         <Min: Number>                                    { set minimum hyphenation margin }
+.hys         <Min: Number>                                    { set minimum hyphenation space }
+.ie          <Condition: Expression, True-Macro: Macro>       { if-else condition }
+.if          <Condition: Expression, True-Macro: Macro>       { if condition }
+.ig          <End: String?>                                   { ignore input until .end macro }
+.in          <Indent: Size, Increment?: Boolean>              { set or increment indent }
+.it          <Lines: Number, Macro: Macro>                    { set input line trap }
+.itc         <Lines: Number, Macro: Macro>                    { set input line trap with continuation }
+.kern        <Amount: Number>                                 { adjust kerning }
+.lc          <Char: Char>                                     { set leader character }
+.length      <Register: Register, String: String>             { get length of string in register }
+.lf          <Line: Number, File: String?>                    { set line and file for debugging }
+.lg          <Flag: Number>                                   { ligature control }
+.linetabs    <Mode: Enum>                                     { set handling for tabs in line mode }
+.ll          <Length: Size>                                   { set line length }
+.ls          <Space: Number>                                  { set line spacing }
+.lsm         <Space: Number>                                  { set last line spacing margin }
+.lt          <Length: Size>                                   { set title length }
+.mc          <Margin: Number?>                                { set marginal character }
+.mk          <Register: Register>                             { mark vertical place }
+.mso          <File: String>                                  { mount standard output }
+.msoquiet    <None>                                           { mount standard output quietly }
+.na          <None>                                           { no adjust }
+.ne          <Amount: Number>                                 { need vertical space }
+.nf          <None>                                           { no fill }
+.nh          <None>                                           { no hyphenation }
+.nm          <Increment: Number?, Start: Number?, Width: Number?, Pad: Number?> { set number mode }
+.nn          <Number: Number>                                 { no number next number of lines }
+.nop         <None>                                           { no operation }
+.nr          <Register: Register, Value: Number, Increment?: Boolean> { set or increment number register }
+.nroff       <None>                                           { switch to nroff mode }
+.ns          <None>                                           { no space mode }
+.nx          <File: String>                                   { switch to next file }
+.open        <File: String>                                   { open a file }
+.opena       <File: String>                                   { open a file for appending }
+.os          <None>                                           { output saved lines }
+.output      <Macro: Macro>                                   { set output line processing macro }
+.pc          <Char: Char>                                     { set page number character }
+.pev         <None>                                           { preserve environment }
+.pi          <Command: String>                                { pipe output to command }
+.pl          <Length: Size>                                   { set page length }
+.pm          <None>                                           { print macro definitions }
+.pn          <Number: Number>                                 { set next page number }
+.pnr         <None>                                           { print number register }
+.po          <Offset: Size>                                   { set page offset }
+.ps          <Size: Number>                                   { set point size }
+.psbb        <Filename: String>                               { process PostScript bounding box }
+.pso         <Command: String>                                { pipe output to shell command }
+.ptr         <None>                                           { push trace state }
+.pvs         <Space: Number>                                  { set provisional vertical space }
+.rchar       <Character: Char>                                { remove character definition }
+.rd          <Macro: Macro>                                   { read input until end macro }
+.return      <None>                                           { return from diversion }
+.rfschar     <Name: String>                                   { remove fallback space character }
+.rj          <Justify: Number?>                               { right justify }
+.rm          <Name: String>                                   { remove macro or string }
+.rn          <Old: String, New: String>                       { rename string or number register }
+.rnn         <Old: String, New: String>                       { rename number register }
+.rr          <Register: Register>                             { remove register }
+.rs          <None>                                           { restore space mode }
+.rt          <Tag: String>                                    { return from trap }
+.schar       <Name: String, Description: String>              { set special character }
+.shc         <Character: Char>                                { set soft hyphen character }
+.shift       <Amount: Number>                                 { shift output horizontally }
+.sizes       <List: Number>                                   { set permissible sizes }
+.so          <File: String>                                   { source a file }
+.soquiet     <None>                                           { source a file quietly }
+.sp          <Distance: Size?>                                { space vertically }
+.special     <Text: String>                                   { process text as special }
+.spreadwarn  <Number: Number>                                 { set spread warning limit }
+.ss          <Space: Number, Stretch?: Number>                { set sentence spacing }
+.stringdown  <String: String>                                 { convert string to lowercase }
+.stringup    <String: String>                                 { convert string to uppercase }
+.sty         <Stylesheet: String>                             { set style sheet }
+.substring   <Dest: Register, Src: String, Start: Number, Length: Number> { extract substring }
+.sv          <Register: Register>                             { save register }
+.sy          <Command: String>                                { execute shell command }
+.ta          <List: Size>                                     { set tab stops }
+.tag         <Name: String>                                   { set tag for vertical motion }
+.taga        <Name: String, Adjustment: Number>               { adjust tag for vertical motion }
+.tc          <Character: Char>                                { translate input character }
+.ti          <Indent: Size>                                   { temporary indent }
+.tkf         <Feature: String, Value: String>                 { toggle kerning feature }
+.tl          <Left: String, Center: String, Right: String>    { three-part title }
+.tm          <Text: String>                                   { print to terminal }
+.tm1         <Text: String>                                   { print to terminal with newline }
+.tmc         <Macro: Macro>                                   { define terminal input macro }
+.tr          <Old: Char, New: Char>                           { translate characters }
+.trf         <Font: String>                                  { translate font }
+.trin        <Increment: Size>                               { set temporary right indent }
+.trnt        <Temporary: Number>                             { set temporary no-trap mode }
+.troff       <None>                                           { switch to troff mode }
+.uf          <Font: Number>                                   { set underline font }
+.ul          <Lines: Number?>                                 { underline text }
+.unformat    <None>                                           { unformat input }
+.vpt         <None>                                           { validate page top }
+.vs          <Space: Size>                                    { set vertical space }
+.warn        <Level: Number>                                  { set warning level }
+.warnscale   <Factor: Number>                                 { scale warning output }
+.wh          <Position: Number, Macro: Macro>                 { set when trap }
+.while       <Condition: Expression, Macro: Macro>            { loop while condition is true }
+.write       <File: String, Text: String>                     { write text to file }
+.writec      <File: String, Text: String>                     { write text to file with checksum }
+.writem      <Macro: Macro>                                   { write text to macro }
+
