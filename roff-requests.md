@@ -45,9 +45,7 @@
 - **devicem [name]**: Postprocessor Access. Same as 'device', but for multiple devices.
 - **di [diversion]**: Diversions. Starts or ends a diversion.
 - **do [name]**: Compatibility Mode. Executes a do loop.
-- **ds [name string]**: Strings. Defines a
-
- string 'name' with content 'string'.
+- **ds [name string]**: Strings. Defines a string 'name' with content 'string'.
 - **ds1 [name string]**: Strings. Defines a string 'name' with content 'string' including a newline.
 - **dt [macro]**: Diversion Traps. Defines a trap to call 'macro' when a diversion is filled.
 - **ec [char]**: Using Escape Sequences. Sets the escape character (default is '\').
@@ -98,9 +96,7 @@
 - **ll [length]**: Line Layout. Sets line length.
 - **ls [space]**: Manipulating Spacing. Sets line spacing.
 - **lsm [macro]**: Leading Space Traps. Sets a macro to be called when leading space is seen.
-- **lt [length]**: Page Layout. Sets the title length
-
- for headers and footers.
+- **lt [length]**: Page Layout. Sets the title length for headers and footers.
 - **mc [margin character]**: Miscellaneous. Sets the margin character.
 - **mk [register]**: Page Motions. Marks vertical place in a register.
 - **mso [file]**: I/O. Includes a macro file.
@@ -157,9 +153,7 @@
 - **stringdown [name]**: Strings. Moves a string definition to a lower level.
 - **stringup [name]**: Strings. Moves a string definition to a higher level.
 - **sty [family]**: Font Families. Sets the style for a font family.
-- **substring [string start length]**
-
-: Strings. Extracts a substring from 'string'.
+- **substring [string start length]**: Strings. Extracts a substring from 'string'.
 - **sv [diversion]**: Page Control. Saves the current vertical position in a diversion.
 - **sy [command]**: I/O. Executes a shell command.
 - **ta [tab1 tab2 ...]**: Tabs and Fields. Sets tab stops.
