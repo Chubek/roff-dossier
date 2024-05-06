@@ -1,0 +1,126 @@
+.\" Define a macro for starting a new poem
+.de SP
+.br
+.sp .5i
+..
+
+.\" Define a macro for centering titles
+.de CT
+.ce 100
+..
+
+.\" Define a macro for setting poem body indentation
+.de PI
+.in .5i
+..
+
+.\" Define a macro for unsetting indentation
+.de UI
+.in 0
+..
+
+.\" Define a macro for emphasized text (italic)
+.de IT
+.ft I
+..
+
+.\" Define a macro to revert to normal text
+.de NT
+.ft R
+..
+
+.\" Define a macro for small text
+.de SM
+.ps 8
+.vs 10
+..
+
+.\" Define a macro for normal text size
+.de NM
+.ps 10
+.vs 12
+..
+
+.\" Define a macro for adding extra vertical space
+.de VS
+.sp .2i
+..
+
+.\" Define a macro for page breaks
+.de PB
+.bp
+..
+
+.\" Define a macro for a section separator
+.de SS
+.sp 1
+.ce 100
+\l'5i'
+.sp 1
+..
+
+.\" Define a macro for block quotes
+.de BQ
+.in 1i
+.ll -1i
+..
+
+.\" End of block quote
+.de EQ
+.in 0
+.ll \n(.lu
+..
+
+.\" Define a macro for page headers
+.de PH
+'wh 0 PH' \" Remove previous headers
+'ch PH \n(.pu-1v' \" Place the header
+.tl ''%'\(bu''%+1'
+..
+
+.\" Define a macro for page footers
+.de PF
+'wh 0 PF' \" Remove previous footers
+'ch PF \n(.pu+1v' \" Place the footer
+.tl ''- \nP -''-'
+..
+
+.\" Document start
+.ll 6i
+.ls 2
+.PH
+.PF
+
+.CT
+The Essential Rumi
+.SP
+
+.CT
+Chapter 1: The Opening
+.SP
+
+.PI
+Awaken to the mystery of being here
+and enter the quiet immensity of your own presence.
+.UI
+
+.SP
+.PI
+Have joy and peace in the temple of your senses.
+.UI
+
+.SP
+.PI
+Try, as best you can, not to dwell on the problems
+but on the solution.
+.UI
+
+.SP
+.PI
+.SS
+.UI
+.PB
+
+.PH
+.PF
+
