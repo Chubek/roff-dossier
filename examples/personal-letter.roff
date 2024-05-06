@@ -1,0 +1,55 @@
+\" Document settings for a personal, poetic letter
+.ll 4.5i  \" Line length for a more narrow, focused text block
+.po 1.5i  \" Page offset to center the text on the page
+.ps 14    \" Point size larger for readability and aesthetic
+.vs 18    \" Vertical space to give a sense of open text
+
+\" Define macros to enhance the letter's appearance
+.de ST  \" Setup for the start of the letter
+.ft R    \" Font Roman
+.ps 18   \" Point size slightly larger for the start
+.ce 100  \" Center text
+.sp 2    \" Space before the start
+..
+.de SG  \" Signature line
+.sp 2    \" Add space before signature
+.in 3.5i \" Indent signature to the right
+.ft I    \" Italicize signature
+.ps 16   \" Slightly larger font for emphasis
+..
+.de TX  \" Text body
+.ft P    \" Set font to Palatino if available, otherwise default
+.ps 14   \" Point size for body text
+.vs 18   \" Line spacing to enhance readability
+.in 1i   \" Indent text slightly for aesthetics
+.ti -1i  \" Temporary indent back to left for the first line
+.ce 0   \" Left-align the text
+..
+
+\" Start of the letter
+.ST
+"My Dearest,"
+
+\" Body of the letter
+.TX
+In the quiet of the night, my thoughts turn to you, vivid as the stars above. Yet, in the day's harsh light, I shy away, haunted by the eyes of the world.
+
+.TX
+Your presence is a comfort that my pride foolishly denies. In my heart, you are the melody that lingers in the silence of my solitude.
+
+.TX
+If only our love were as celebrated in the streets as it is in the hidden chambers of my heart. But I fear the whispers, my love, as much as I yearn for your touch.
+
+\" Closing of the letter
+.TX
+May this letter hold my affection until I find the courage to stand by you, as proud as I am inwardly devoted.
+
+\" Signature
+.SG
+"Yours eternally,"
+
+.SG
+"Veis"
+
+\" End of the document
+
