@@ -1,0 +1,188 @@
+.\" Define macros for document structure and layout
+.de StartDoc
+  .po 1i
+  .ll 6i
+  .lt 6i
+  .ps 12
+  .vs 14
+..
+
+.\" Define header macro
+.de Header
+  .tl \\\\$1
+..
+
+.\" Define macro for a new scene
+.de NewScene
+  .bp
+  .sp 2
+  .ce 1
+  .ft B
+  .ps 18
+..
+
+.\" Define macro for Scene Title
+.de SceneTitle
+  .sp 1
+  .ce 1
+  .ft B
+  .ps 14
+..
+
+.\" Define macro for character speech start
+.de Char
+  .br
+  .ti +0.5i
+  .ft B
+..
+
+.\" Define macro for dialogue text
+.de Speak
+  .ft R
+  .ti +1i
+  .ps 12
+..
+
+.\" Define macro for stage direction
+.de StageDir
+  .br
+  .in 1i
+  .ft I
+  .in +0
+..
+
+.\" Define macro for centered text
+.de CenterText
+  .ce
+  .ft R
+..
+
+.\" Define macro for line space
+.de LineSpace
+  .sp .5v
+..
+
+.\" Define macro for italic text
+.de ItalicText
+  .ft I
+..
+
+.\" Define macro for bold text
+.de BoldText
+  .ft B
+..
+
+.\" Define macro for big text
+.de BigText
+  .ps 16
+..
+
+.\" Define macro for small text
+.de SmallText
+  .ps 10
+..
+
+.\" Define macro for normal text size
+.de NormalText
+  .ps 12
+..
+
+.\" Define macro for a break in text
+.de Break
+  .br
+..
+
+.\" Define macro for extra indentation
+.de ExtraIndent
+  .ti +2i
+..
+
+.\" Define macro for less indentation
+.de LessIndent
+  .ti -.5i
+..
+
+.\" Define macro for resetting indentation
+.de ResetIndent
+  .in 0
+..
+
+.\" Define macro for paragraph
+.de Paragraph
+  .sp 1
+  .in 0
+..
+
+.\" Define macro for normal font
+.de NormalFont
+  .ft R
+..
+
+.\" Define macro for page number
+.de PageNum
+  .sp |0.25i
+  .ce 100
+  'pn \\\\n%'
+..
+
+.\" Define macro for end of page
+.de EndPage
+  .bp
+..
+
+.\" Define macro for new act
+.de NewAct
+  .bp
+  .sp 2
+  .ce 1
+  .ft B
+  .ps 20
+..
+
+.\" Define macro for act title
+.de ActTitle
+  .sp 1
+  .ce 1
+  .ft B
+  .ps 16
+..
+
+.\" Define macro for dramatic pause
+.de DramPause
+  .sp 0.5
+..
+
+.\" Define macro for emphasis
+.de Emphasis
+  .ft B
+..
+
+.\" Define macro for a separator
+.de Separator
+  .sp 1
+  .ce 100
+  \l'6i'
+  .sp 1
+..
+
+.\" Begin Document
+.StartDoc
+.Header 'A Midsummer Night\'s Dream'
+
+.\" Act 1, Scene 1
+.NewAct
+.ActTitle "ACT I"
+.NewScene
+.SceneTitle "SCENE I. Athens. The palace of THESEUS."
+.Char THESEUS
+.Speak "Now, fair Hippolyta, our nuptial hour"
+.Speak "Draws on apace; four happy days bring in"
+.Speak "Another moon: but, oh, methinks, how slow"
+.Speak "This old moon wanes! She lingers my desires,"
+.Char HIPPOLYTA
+.Speak "Four days will quickly steep themselves in night;"
+.Speak "Four nights will quickly dream away the time;"
+.StageDir "(They continue discussing their wedding plans.)"
+.EndPage
+
+.PageNum
