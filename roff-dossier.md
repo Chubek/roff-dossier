@@ -53,5 +53,39 @@ Which means, yes, **YOU CAN PUN IDENTIFIERS IN ROFF!** That is because, there's 
 Although there are plenty of examples in the the `examples` directoy, I am going to show a basic demonstration of ROFF:
 
 ```roff
+.\" Start of the document (comment)
+.TH "GROFF Demonstration" 1 "May 6, 2024"
+.\"
+.\" Set up a macro to emphasize text
+.de emphasize
+.  ft B       \" Switch to bold font
+.  \\$1       \" Print the first argument passed to the macro
+.  ft R       \" Switch back to regular font
+..
+.\"
+.\" Document abstract section
+.SH "Abstract"
+This document serves as a basic demonstration of GROFF's capabilities,
+including formatting text and using macros.
+.\"
+.\" Introduction section with custom macro usage
+.SH "Introduction"
+GROFF (GNU troff) is not just for creating man pages; it's a powerful typesetting
+system capable of producing complex documents. Here is an example of
+.emphasize emphasized text.
+.\"
+.\" Conclusion section
+.SH "Conclusion"
+This short document illustrates how easy it is to get started with GROFF for document processing.
+.\"
+.\" End of the document (comment)
 
 ```
+
+This example uses both a macro from the established package, and defines a macro itself.
+
+
+Now that we learned the syntax, let's learn the semantics!
+
+
+### D: Semantics of ROFF
