@@ -1,0 +1,61 @@
+.de H1
+.sp 1
+.in +1i
+.ft B
+.ps 14
+\\$1
+.ps
+.ft
+.in
+.sp 2
+..
+.de H2
+.sp 1
+.in +1i
+.ft I
+.ps 12
+\\$1
+.ps
+.ft
+.in
+.sp 1
+..
+.de INGR
+.ta 0.5i
+.ti +0.5i
+\\$1	\\$2
+.br
+..
+.de STEP
+.nf
+.ft I
+.sp 1
+.ie (\\n[.$] >= 2) \{\
+    .ti +0.5i
+    Step \\$1: \\$2
+\}
+.el \{\
+    .tm "Error: STEP macro requires two arguments."
+\}
+.ft
+.fi
+.sp 1
+..
+.ll 4i
+.pl 6i
+.po 1i
+
+.H1 "Hashbrowns Recipe"
+.H2 "Ingredients"
+.INGR "Potatoes, peeled" "2 large"
+.INGR "Butter or oil" "2 tablespoons"
+.INGR "Salt" "to taste"
+.INGR "Pepper" "to taste"
+
+.H2 "Instructions"
+.STEP 1 "Grate the potatoes into a clean towel. Squeeze out as much liquid as possible to ensure crispiness."
+.STEP 2 "Heat the butter or oil in a large skillet over medium-high heat."
+.STEP 3 "Spread the grated potatoes evenly in the skillet. Press them down lightly and season with salt and pepper."
+.STEP 4 "Cook until the bottom is golden brown and crispy, about 5-7 minutes. Flip the hashbrowns and cook the other side."
+.STEP 5 "Serve hot, directly from the skillet."
+
