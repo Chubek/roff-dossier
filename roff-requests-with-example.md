@@ -225,9 +225,7 @@
      ```
 
 27. **.char** - Define a new character.
-   - **Signature
-
-**: `.char <name: string>, <description: string>`
+   - **Signature**: `.char <name: string>, <description: string>`
    - **Example**:
      ```roff
      .char myChar \(*A  \" Defines 'myChar' as the special character sequence '*A'
