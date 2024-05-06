@@ -1,0 +1,27 @@
+.de scream
+.  br
+.  sp .5v
+.  in +.5i
+.  if !\\$1 \{\
+.    ft B
+.    ps +2
+.    ce 1000
+.  \}
+.  if \\$1 \{\
+.    ft R
+.    ps -2
+.  \}
+.  \\$1
+.  in -.5i
+.  ft R
+.  ps \\n(.s
+..
+
+.PP
+.scream
+"I scream,"
+.scream 1
+you scream,
+.scream
+"we all scream for ice cream!"
+.scream 1
