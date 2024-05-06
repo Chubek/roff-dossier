@@ -48,6 +48,10 @@ Identifiers are used in macro, register and string names (read about the semanti
 
 Which means, yes, **YOU CAN PUN IDENTIFIERS IN ROFF!** That is because, there's a shared symbol table for everything. Unless you spin off a new env with '.ev' requests. [See: `examples/punning.roff`]
 
+Let's not forget: **Numeric Expressions in ROFF are always enclosed in Parenthesis**.
+
+So basically, in ROFF, within certain requests like `.if` we may use numeric expresions. And these are alays enclosed in parenthesis. 
+
 #### An Example of a ROFF Code
 
 Although there are plenty of examples in the the `examples` directoy, I am going to show a basic demonstration of ROFF:
