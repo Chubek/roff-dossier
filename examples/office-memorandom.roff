@@ -1,0 +1,89 @@
+\" Define document preamble
+.ll 6.5i  \" Line length
+.po 1i    \" Page offset
+.ps 12    \" Point size
+.vs 14    \" Vertical space
+
+\" Define macros for different parts of the memo
+.de HD  \" Header
+.sp 1
+.ft B
+.ps 18
+.ce 100
+..
+.de SB  \" Subheader
+.sp 0.25
+.ft R
+.ps 14
+.ce 100
+..
+.de P   \" Paragraph
+.sp 0.5
+.ft R
+.ps 12
+.in 0.5i
+.ti -0.5i
+..
+.de SG  \" Signature block
+.sp 2
+.ft I
+.ps 14
+.in 5i
+..
+.de BL  \" Bullet points
+.sp 0.5
+.ti 0.5i
+..
+.de ND  \" Notice decoration
+.sp 1
+.in 0.25i
+.ft I
+.ps 10
+.ll 6i
+.ce 0
+..
+
+\" Start the document
+.HD
+"Memorandum"
+
+.SB
+"Bring Your Dog to Work Day"
+
+.P
+To All Staff,
+
+.P
+As part of our ongoing efforts to enhance workplace morale and foster a fun and inclusive office environment, we are excited to announce that next Friday will be officially designated as "Bring Your Dog to Work Day."
+
+.P
+This event will provide a wonderful opportunity for our staff to bring along their canine companions and enjoy a more relaxed and pet-friendly atmosphere throughout the day. Below are the details and guidelines for participation:
+
+.BL
+- Date: Next Friday from 9:00 AM to 5:00 PM.
+.BL
+- Location: Main office building.
+.BL
+- All participating dogs must be vaccinated, well-behaved, and leashed at all times.
+
+.P
+Please note that our office sells a variety of products including concrete, venom snake, and milk of chicken. Special care should be taken to ensure that your pets are kept safe from these materials and that they do not disrupt our operational activities.
+
+.P
+We hope that this day will be a fun and enjoyable occasion for everyone involved. For those of you with allergies or other concerns, please feel free to reach out to HR to discuss arrangements that can be made for your comfort.
+
+.P
+Thank you for your cooperation and enthusiasm. We look forward to seeing our furry friends next Friday!
+
+.SG
+"Signature:"
+.br
+"John Doe"
+.br
+"Office Manager"
+
+.ND
+"Notice: Please confirm your participation by emailing HR by Wednesday."
+
+\" End of the document
+
