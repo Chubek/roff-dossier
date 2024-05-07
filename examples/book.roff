@@ -1,0 +1,186 @@
+\" Define document settings
+.ll 6i        \" Set line length
+.po 1i        \" Page offset
+.ps 12        \" Point size
+.vs 14        \" Vertical spacing
+
+\" Define 30 macros
+.de ST  \" Start Title
+.sp 2
+.ft B
+.ps 24
+.ce 100
+..
+.de AU  \" Author
+.sp 1
+.ft I
+.ps 18
+.ce 100
+..
+.de CH  \" Chapter Title
+.sp 2
+.ft B
+.ps 20
+.ce 100
+..
+.de TX  \" Text
+.ft R
+.ps 12
+.vs 14
+.in 0.5i
+.ti -0.5i
+..
+.de SE  \" Section
+.sp 1
+.ft B
+.ps 14
+.ce 0
+..
+.de QU  \" Quote
+.sp 1
+.in 1i
+.ti -1i
+.ft I
+..
+.de QE  \" End Quote
+.ft R
+.in 0
+.ti 0
+.sp 1
+..
+.de PG  \" Page number
+.sp 0.5
+.ce 100
+"Page \\n%"
+..
+.de HL  \" Horizontal Line
+.sp 0.5
+'\\l\'100\''
+.sp 0.5
+..
+.de IT  \" Italics
+.ft I
+..
+.de BI  \" Bold Italics
+.ft BI
+..
+.de NF  \" Normal Font
+.ft R
+..
+.de UL  \" Underline
+.ul
+..
+.de NU  \" No Underline
+.cu 0
+..
+.de IN  \" Increase Indent
+.in +0.5i
+..
+.de DE  \" Decrease Indent
+.in -0.5i
+..
+.de BR  \" Break
+.br
+..
+.de SP  \" Space
+.sp 1
+..
+.de PA  \" Paragraph
+.ti +0.5i
+..
+.de FO  \" Footnote
+.sp 0.5
+.ft I
+.ps 10
+.in 5.5i
+..
+.de EN  \" End Note
+.ft R
+.ps 12
+.in 0
+..
+.de BL  \" Bullet List
+.sp 0.5
+.in +0.5i
+.ti -0.5i
+..
+.de EL  \" End List
+.in 0
+..
+.de LI  \" List Item
+.sp 0.5
+.in +1i
+..
+.de EI  \" End Item
+.in -1i
+.sp 0.5
+..
+.de DI  \" Diversion start
+.di some-diversion
+..
+.de DF  \" Diversion end
+.di
+..
+.de PU  \" Put Diversion
+.sp 2
+.in 1i
+.ps 14
+.ft I
+.do some-diversion
+.in 0
+.ft R
+.ps 12
+..
+.de DV  \" Start a new diversion
+.di new-diversion
+..
+.de DP  \" Put the diversion
+.do new-diversion
+..
+.de HE  \" Header
+.ft B
+.ps 10
+.ce 100
+..
+
+\" Begin the book
+.ST
+"The Great Adventures"
+.AU
+"By John Doe"
+
+.CH
+"Chapter 1: The Awakening"
+
+.TX
+The story begins in a small town, veiled in the secrecy of dawn's first light.
+
+.SE
+"A Mysterious Visitor"
+
+.QU
+"Little did the town know, this morning would change everything."
+.QE
+
+.TX
+As the sun rose, a figure appeared at the edge of the town. The mysterious visitor, cloaked in shadows, moved silently towards the heart of the village.
+
+.SE
+"Revelations"
+
+.TX
+The visitor revealed himself at the town square. Underneath the cloak was an old man with tales of ancient times and secrets that were thought to be long forgotten.
+
+.DI  \" Start diversion for later use
+The old man spoke of a prophecy that involved the town's ancient ruins and the awakening of a legend believed to be myth.
+.DF  \" End diversion
+
+.PU  \" Put the content of the diversion here
+
+.TX
+The chapter concludes with the town in awe, ready to uncover the mysteries that lay in their own backyard.
+
+.PG  \" Print page number
+
+\" End of the chapter
+
