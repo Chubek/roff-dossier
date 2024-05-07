@@ -1,4 +1,4 @@
-ab,None,abort with message,
+ab,Message!String,abort with message,
 ad,Mode!Enum,adjust lines: 'l'eft%c'r'ight%c'c'enter%c'b'oth%c'n'one,
 af,Dest!Register&Src!Format,assign format to a number register,
 aln,New!Register&Old!Register,alias name for a number register,
