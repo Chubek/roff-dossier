@@ -51,10 +51,13 @@ ROFF suddenly found a new use, and to this day, it's the only use it has: The ma
 You can learn about this in the [Manpages](ROFF-MANPAGES.md) document of this dossier.
 
 
-### GROFF, the Only Modern ROFF
+### Implementations of ROFF
 
+There has been several historic, and actively-developed implementations of ROFF.
 
-In the late 1980s, GNU project released GROFF. To this day, it is the only way you can access a ROFF engine. You can try and build the one at Heirloom Toolchest, just dont.
-
-
+* Nroff, Troff, Ditroff -> These were the original utilities by AT&T, `nroff` was for terminals, `troff` was for phototypesetters, `ditroff` was a device-independent extension. They are not being developed anymore.
+* Heirloom ROFF -> The ROFF implementation for Sun Computer's Solaris workstations, released alongside other UNIX utilities in a package called 'Heirloom Toolchest'. I tried to build HTchst on Linux, seems like `mkdev.h` header has been removed from the latest kernels, and HTchst can't be built without it. Also, it's kinda hard to find all the utilities in one place!
+* Neatroff -> A modern TROFF. I don't know anything about it, and I don't intend to know. I wish to implement ROFF on my own so I am very competetive with people who do the same :(
+* GROFF -> The GNU implementation, the only 'viable' ROFF implementation, used in Linux, especially for Manpages.
+* BSD ROFF -> This one is kinda the same as Heirloom ROFF. However, it seems like BSD has no longer any use for ROFF, because it uses **Mandoc** for manpages. Learn more about it at [Manpages](ROFF-Manpages.md) document.
 
