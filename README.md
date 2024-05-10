@@ -44,4 +44,6 @@ My email: `chubakbidpaa [at] riseup [dot] net`.
 
 Take care.
 
+Sony PS 1: If you liked this, take a gander at my [PostScript dossier](github.com/Chubek/postscript-dossier). I have a lot of projects cooking, like atm, I am working on 'RuppVM', a stack machine with Green threads, FFI, and stop-the-world GC I already have the ISA half-baked. [Here is where RuppVM will reside til the end of time!](github.com/Chubek/RuppVM). Also, it goes without saying, check my Github profile homepage [here](github.com/Chubek).
 
+Sony PS 2: I don't really like hosting on Github. But it's the only way to be 'seen' you know? 
