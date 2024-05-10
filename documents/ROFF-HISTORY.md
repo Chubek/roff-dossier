@@ -36,6 +36,13 @@ Phototypesetters were the transition between an all-digital and all-manual litho
 One aspect of ROFF is the pipeline, `eqn`, `chem`, etc. One of the few [real] women who worked at Bell Labs, Lorinda Cherry, developed `eqn` to preprocess mathematical equation. Other utilities were developed by people like Ossanna himself, or Brian Kernighan. 
 
 
+## UNIX Manpages
+
+ROFF suddenly found a new use, and to this day, it's the only use it has: The manpages!
+
+You can learn about this in the [Manpages](ROFF-MANPAGES.md) document of this dossier.
+
+
 ## GROFF, the Only Modern ROFF
 
 
