@@ -1,6 +1,14 @@
 # The ROFF Syntax
 
-## Requests and Escape Sequences
+### Text Literals, Metric Literals, Numeric Literals
+
+A form of 'text literation' is available via delimiting text between `'` and `'`, basically, the way you do it in Shell. 
+
+There's also 'metric literals', these are numbers with units. `21i` stands for `21 inches`.
+
+If we omit the unit from the number, we get an atomic number literal, e.g. `2`.
+
+### Requests and Escape Sequences
 
 ROFF, being an ancient language, designed for efficiency, has a very 'terse' syntax. A 'terse' syntax, however, is not 'exactly' what ROFF has. We could say LLVM has a 'terse' syntax, ROFF is beyond 'terse': It's 'oblique'!
 
@@ -28,7 +36,7 @@ One important escape sequence is `\"`. This one's basically comment. Up until ne
 
 You may notice that, the typesetting system that people use today, LaTeX, is not much different syntax-wise. In fact, I would not be suprirsed if one could create syntax-directed translator from ROFF to LaTeX and back! There may even exist a script or program that does so.
 
-## Numeric Expressions
+### Numeric Expressions
 
 ROFF has extensive support for numeric expressions, thus making it a turing-complete language. Most UNIX languages are, in fact, Turing-complete and Bash and AWK are both Universal TMs.
 
@@ -44,10 +52,10 @@ Numeric expressions are only supported as parameters to requests like `.while` a
 
 ```
 
-If you're wondering what `.nr` does, read about [Registers](ROFF-REGISTERS).
+If you're wondering what `.nr` does, read about [Registers](ROFF-REGISTERS.md).
 
-**Anything else is text;**
-**and Everything else is text!**
+
+### Text, and Hyphenation
 
 Basically, anything that is not a request, or an escape sequence, it considered plain text. There are some 130-odd built-in requests which are expainded by macros (read about them in [Macros](ROFF-MACROS.md)].
 
@@ -64,3 +72,5 @@ Another line of text
 ```
 
 Here, `MY_OTHER_MACRO` terminate the 'effect' of `MY_MACRO`. So any requests made, to, for example, change the font, are reverted back.
+
+
