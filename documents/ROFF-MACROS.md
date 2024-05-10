@@ -19,3 +19,18 @@ So you see `..`, that is usually the macro terminator. In a syntax resembling th
 \\$1
 EB
 ```
+
+Here `\\$1` is the argument number, similar to Shell, ROFF is 'tacit'. Many older languages are tacit. Most scripting languages related to UNIX are tacit, e.g. Perl. You do not, however, always need to pass an argument to a macro. A macro's effect is set until the next linebreak. You can see it in the `examples` directory.
+
+```
+.M1
+Line of text
+
+\" Effect of M1 done
+
+.M2
+Line of text 2
+
+\" Effect of M2 done
+
+```

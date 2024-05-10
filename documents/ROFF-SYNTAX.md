@@ -24,6 +24,8 @@ Besides the requests, we have 'escape sequences'. These are sequences of text be
 
 You can view the list of escape sequences in `datasets/roff-escapes.csv`. They achieve a lot of things, for example, `\&` makes it so the next line is 'escaped' (similar to `\` in LaTeX).
 
+One important escape sequence is `\"`. This one's basically comment. Up until newline, everything is ignore.
+
 You may notice that, the typesetting system that people use today, LaTeX, is not much different syntax-wise. In fact, I would not be suprirsed if one could create syntax-directed translator from ROFF to LaTeX and back! There may even exist a script or program that does so.
 
 
