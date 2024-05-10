@@ -21,4 +21,4 @@ LaTeX still deals with this issue, so every macro in ASCII begins with '\'.
 
 Funnily enough, on digial media, like a webpage, the 'sentinelality' of `\` has all but disappeared. 
 
-You can view a dataset of all the ROFF escape sequences in `datasets/roff-escapes.md`.
+You can view a dataset of all the ROFF escape sequences in `datasets/roff-escapes.csv`.
