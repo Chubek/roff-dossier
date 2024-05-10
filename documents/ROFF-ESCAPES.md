@@ -4,7 +4,17 @@ Escape sequences range from simple ones like `\c` to add a line break to `\fB\h'
 
 The most important escape sequence in ROFF is `\n[<id>]`, and its string counterpart `\*<id>`, read the page on [Registers](ROFF-REGISTERS.md).
 
-### ASCII and Sentinels
+### Passing Arguments to Escape Sequences
+
+It is possible to pass arguments to escape sequences. Look the `\f` example above, or this:
+
+```roff
+Words\h'1i'apart. \v'.5i' Now lower.
+```
+
+So here, we pass `1i`, as in 1 inch (which the reader is most likely familiar with), to the `\h` escape sequence. We separate, and delmit these arguments with `'`.
+
+### Aside: ASCII and Sentinels
 
 These sequences were introduced to ROFF because the `.` notation was not well-suited for intra-text formatting. What I mean is, how often do you use `.` at beginning of a like? Ok, how often do you use `\` at middle of a text?
 
