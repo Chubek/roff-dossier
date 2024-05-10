@@ -2,11 +2,11 @@
 
 ### Text Literals, Metric Literals, Numeric Literals
 
-A form of 'text literation' is available via delimiting text between `'` and `'`, basically, the way you do it in Shell. 
+- String literals: "mystring with space", 'my string with space';
+- Metric literals: 12i, 11em (12 inch, 11 em)
+- Numeric literlas: [0-9]+
 
-There's also 'metric literals', these are numbers with units. `21i` stands for `21 inches`.
-
-If we omit the unit from the number, we get an atomic number literal, e.g. `2`.
+There are contexts where these work, and don't work. Read on further to understand when, and where.
 
 ### Requests and Escape Sequences
 
@@ -17,6 +17,9 @@ Just like its ancestor, Runoff (which we learned about on [History](ROFF-HISTORY
 ``roff
 .de
 .ll 12i
+..
+
+.ds mystr "my string"
 ```
 
 Requests 'MAY' accept one or two parameters. You can see the signature for reqeusts in `datasets/roff-reqeusts.csv`. With them, you can change the configuration of your page (font size, line, spacing...).
